@@ -1,0 +1,131 @@
+/*全局样式*/
+*{
+    padding:0;
+    margin:0;
+}
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+
+/*登录页布局样式*/
+.login-body{
+    background-image: url(../images/Login-min.png);
+}
+.login-title{
+    width:100%;
+    float:right;
+    margin-right: 10%;
+    margin-top: 15%;
+    text-align: center;
+}
+.login-title span{
+    font-size: 28px;
+}
+.login-div{
+    width:100%;
+    float: right;
+    margin-right: 10%;
+    margin-left:auto;
+    margin-top: 50px;
+    border:solid 1px gray;
+    border-radius: 6px;
+    background-color: white;
+    padding:70px 50px 80px 50px;
+    box-shadow: 4px 4px 8px #333333;
+}
+.forget-psw{
+    overflow: auto;
+}
+.forget-psw a{
+    display:inline-block;
+    float: right;
+}
+.login-btn{
+    width:100%;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+
+/*流程库布局样式*/
+.flow-repo-body .header li{
+    float: left;
+    /*padding: 5px;*/
+    list-style: none;
+}
+
+.flow-repo-body .nav-bar>ul{
+    /*overflow: auto;*/
+    width:100%;
+    margin:0;
+}
+
+.flow-repo-body .nav-bar>ul>li{
+    position:relative;
+    float: left;
+    list-style: none;
+    padding: 15px 25px;
+
+}
+
+.flow-repo-body .nav-bar>ul>li a{
+    color:gray;
+    font-size: 16px;
+}
+.dropdown-ul{
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:1000;
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*border-radius:5px;*/
+    box-shadow: 0 2px 8px #333333;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    /*border:solid 1px red;*/
+    min-width:150px;
+    display:none;
+
+}
+.dropdown-ul>li{
+    line-height:35px;
+    font-size: 1em;
+    padding-left: 15px;
+}
+
+.main-content{
+    height:100%;
+    min-height:450px;
+    position:relative;
+
+}
+.flow-repo-content{
+  min-height: 350px;
+    margin-top:35px;
+}
+.down-icon{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    border-top: 5px dashed;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    vertical-align: middle;
+}
+.new-flow-div{
+    position: relative;
+    height: 52px;
+
+}
+.new-flow{
+    width:150px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    float:right;
+}
+.new-flow span{
+    display: inline-block;
+    margin-left: 5px;
+}

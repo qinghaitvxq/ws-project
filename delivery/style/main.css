@@ -1,0 +1,61 @@
+/*布局样式*/
+*{
+    padding:0;
+    margin:0;
+}
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+body{
+    background-image: url(../images/Login-min.png);
+}
+.login-title{
+    width:100%;
+    float:right;
+    margin-right: 10%;
+    margin-top: 15%;
+    text-align: center;
+}
+.login-title span{
+    font-size: 28px;
+}
+.login-div{
+    width:100%;
+    float: right;
+    margin-right: 10%;
+    margin-left:auto;
+    margin-top: 50px;
+    border:solid 1px gray;
+    border-radius: 6px;
+    background-color: white;
+    padding:70px 50px 80px 50px;
+    box-shadow: 4px 4px 8px #333333;
+}
+.forget-psw{
+    overflow: auto;
+}
+.forget-psw a{
+    display:inline-block;
+    float: right;
+}
+.login-btn{
+    width:100%;
+    margin-top: 20px;
+    font-size: 18px;
+}
+/*颜色样式*/
+.login-title span{
+    color:white;
+}
+.login-btn{
+   background-color:rgb(118,199,193);
+    border-color:rgb(118,199,193);
+    color:white;
+}
+.error-info{
+    color:red;
+}
+.error-focus{
+    border-color:red;
+}
+input.placeholder{
+    color:gray;
+}
