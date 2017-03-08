@@ -72,3 +72,6 @@ input.placeholder{
     background-color: rgb(229,112,105);
     color:white;
 }
+.flow-repo-footer span{
+   color:gray;
+}

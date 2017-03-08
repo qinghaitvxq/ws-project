@@ -13,9 +13,20 @@
     <!--<link rel="stylesheet" href="../style/main-min.css">-->
     <link rel="stylesheet" href="../style/layout.css">
     <link rel="stylesheet" href="../style/color.css">
-
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+          rel = "stylesheet">
+    <style>
+        .ui-widget-header,.ui-state-default, ui-button {
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+    </style>
     <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
     <script src="../script/global.js"></script>
+
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,7 +85,7 @@
                  <li ><a href="#">行政类
                      <span class="down-icon" ></span>
                  </a>
-                     <ul class="dropdown-ul" >
+                     <ul class="dropdown-ul"  >
                          <li>市场调研hah</li>
                          <li>竞品调研</li>
                          <li>待到春花烂漫时</li>
@@ -132,21 +143,28 @@
           <div class="col-md-1" ></div>
       </div>
       <div class=" row flow-repo-footer">
-          <ul>
-              <li>hello world</li>
-              <li>hello world</li>
-              <li>hello world</li>
-          </ul>
+          <span>如需帮助，请拨打110....</span>
+      </div>
+      <div id="dialog-form">
+          <p>hello world</p>
       </div>
   </div>
 
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script>
    $(document).ready(function () {
 
        $(".nav-bar").on("mouseenter mouseleave",">ul>li",function (e) {
            display_childmenu(e);
+       });
+
+       $(".new-flow").click(function () {
+           $( "#dialog-form" ).dialog({
+               autoOpen: false,
+               modal: true
+           });
        });
    });
    function display_childmenu(target) {
