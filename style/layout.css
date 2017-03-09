@@ -46,7 +46,36 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 
 
 /*流程库布局样式*/
-.flow-repo-body .header li{
+.nav-ws,
+.userInfo{
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style:none;
+}
+.nav-ws>li,
+.userInfo>li{
+    positive:relative;
+    display:block;
+    padding: 16px 0;
+
+}
+.nav-ws li a
+{
+    position:relative;
+    display:block;
+    padding:3px 20px;
+    border-radius: 5px;
+    font-size:16px;
+}
+.userInfo li a{
+    position:relative;
+    display:block;
+    padding:3px 10px;
+    font-size:16px;
+ }
+
+.flow-repo-body .header .nav-ws>li,
+.flow-repo-body .header .userInfo>li{
     float: left;
     /*padding: 5px;*/
     list-style: none;
@@ -78,14 +107,46 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     list-style: none;
     padding-top: 20px;
     padding-bottom: 20px;
-    /*border-radius:5px;*/
     box-shadow: 0 2px 8px #333333;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    /*border:solid 1px red;*/
     min-width:150px;
     display:none;
 
+}
+.userInfo-dropdown-ul{
+    position:absolute;
+    top:100%;
+    right:20%;
+    z-index:1000;
+    list-style: none;
+    margin-top: 4px;
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
+    padding: 10px;
+    /*box-shadow: 0 2px 8px #333333;*/
+    box-shadow: 0 3px 12px rgba(27,31,35,0.15);
+    border-radius: 5px;
+    /*border-bottom-right-radius: 5px;*/
+    /*border-bottom-left-radius: 5px;*/
+    min-width:120px;
+    display:none;
+}
+.userInfo-dropdown-ul>li{
+    padding: 5px;
+     cursor:pointer;
+
+}
+.userInfo-dropdown-ul::before{
+    content:"";
+    display:inline-block;
+    position:absolute;
+    border:8px solid transparent;
+    /*border-bottom-color:rgba(27,31,35,0.15);*/
+    border-bottom-color:white;;
+    top:-16px;
+    right:9px;
+    left:auto;
 }
 .dropdown-ul>li{
     line-height:35px;
@@ -100,8 +161,9 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 
 }
 .flow-repo-content{
-  min-height: 350px;
+    min-height: 600px;
     margin-top:35px;
+    margin-bottom:35px;
 }
 .down-icon{
     display: inline-block;
@@ -124,7 +186,6 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     top: 50%;
     transform: translateY(-50%);
     float:right;
-    /*box-shadow: 0px 2px 4px #333333*/
 }
 .new-flow span{
     display: inline-block;
@@ -134,4 +195,27 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     text-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
+}
+.new-flow-form{
+    padding-left:35px;
+    padding-right: 20px;
+
+}
+.new-flow-form .form-control{
+  width:90%;
+
+}
+.edit-area{
+    float:right;
+}
+.edit-area  span{
+    display: inline-block;
+    padding-left:10px;
+    padding-top: 10px;
+    cursor:pointer;
+}
+.add-fnode span{
+    cursor:pointer;
+    display: inline-block;
+    padding-bottom: 10px;
 }

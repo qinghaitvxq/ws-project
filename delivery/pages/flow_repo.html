@@ -9,13 +9,13 @@
 
     <!-- Bootstrap -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="../dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../style/bootstrap.css">
     <!--<link rel="stylesheet" href="../style/main-min.css">-->
-    <link rel="stylesheet" href="../style/layout.css">
-    <link rel="stylesheet" href="../style/color.css">
+    <link rel="stylesheet" href="../style/main.css">
 
     <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
     <script src="../script/global.js"></script>
+
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,7 +29,7 @@
 <body class="flow-repo-body">
   <div class="container-fluid">
      <div class="row header">
-         <div class="col-md-3"></div>
+         <div class="col-md-2"></div>
          <div class="col-md-7">
              <ul class="nav-ws">
                  <li  role="presentation"><a href="#"  class="active">流程库</a></li>
@@ -39,22 +39,12 @@
                  <li  role="presentation" ><a href="#">管理面板</a></li>
              </ul>
          </div>
-         <div class="col-md-2">
-             <ul class="userInfo">
+         <div class="col-md-3">
+             <ul class="nav-ws">
                  <li  role="presentation"><a href="#" >使用说明</a></li>
                  <!--<li  role="presentation" ><a href="#">搜索</a></li>-->
-                 <!--<li  role="presentation" ><a href="#">个人设置</a></li>-->
-                 <li  role="presentation" class="userInfo-li" >
-                    <a href="#">卡卡西
-                      <span class="down-icon" ></span>
-                   </a>
+                 <li  role="presentation" ><a href="#">个人设置</a></li>
 
-                     <ul class="userInfo-dropdown-ul" >
-                         <li>个人设置</li>
-                         <li>退出</li>
-
-                     </ul>
-                 </li>
              </ul>
          </div>
 
@@ -226,8 +216,7 @@
 
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="../js/modal.js"></script>
-
+<script src="../scripts/modal.js"></script>
 
 <script>
    $(document).ready(function () {
@@ -235,11 +224,6 @@
        $(".nav-bar").on("mouseenter mouseleave",">ul>li",function (e) {
            display_childmenu(e);
        });
-
-       $(".userInfo-li").on("click",function (e) {
-           display_childmenu(e);
-       });
-
 
    });
    function display_childmenu(target) {
@@ -250,15 +234,6 @@
        }
        if(target.type=="mouseleave"){
            menu_ul.hide();
-       }
-       if(target.type=="click"){
-           var isVilible=menu_ul.is(":visible");
-           if(isVilible){
-               menu_ul.hide();
-           }
-           else {
-               menu_ul.show();
-           }
        }
    }
 </script>
