@@ -156,7 +156,7 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 
 .main-content{
     height:100%;
-    min-height:450px;
+    min-height:500px;
     position:relative;
 
 }
@@ -187,10 +187,24 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     transform: translateY(-50%);
     float:right;
 }
-.new-flow span{
+.new-flow span,
+.new-flow-icon span,
+.flow-info span,
+.btn-send-comments span{
     display: inline-block;
     margin-left: 5px;
 }
+.detail-slider-menu span{
+    display: inline-block;
+    margin-left: 8px;
+    cursor:pointer;
+}
+.comment-info span {
+    display: inline-block;
+    margin-left: 10px;
+
+}
+
 .flow-repo-footer{
     text-align: center;
     padding-top: 15px;
@@ -218,4 +232,80 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     cursor:pointer;
     display: inline-block;
     padding-bottom: 10px;
+}
+/*流程展示页*/
+.flow-detail-content{
+    padding-top:25px ;
+    padding-bottom: 25px;
+}
+.nav-bar-detail div{
+    line-height: 60px;
+    width:30%;
+}
+.flow-info{
+    float: left;
+}
+.flow-oper-btns{
+    float:right;
+}
+.detail-slider-menu{
+    list-style: none;
+    margin-right: 20%;
+    text-align: right;
+}
+.detail-slider-menu>li{
+   line-height: 35px;
+    font-size: 14px;
+  font-weight: bold;
+}
+.flow-tree{
+   min-height: 300px;
+
+}
+.flow-description {
+   margin-top:40px;
+    margin-bottom:40px;
+
+}
+.flow-description p{
+    line-height:28px;
+
+}
+.flow-description h4{
+    font-size: 17px;
+}
+.btn-send-comments{
+    display: inline-block;
+    float:right;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.flow-comments{
+    margin-top:70px;
+    clear:both;
+
+}
+.flow-comments ul{
+    list-style: none;
+}
+.flow-comments>ul li{
+  margin-top: 12px;
+}
+.comment-content{
+    padding:18px 16px;
+    border-radius: 5px;
+    box-shadow:0 3px 1px rgb(228,228,230) ;
+    line-height: 25px;
+}
+.reply-content{
+    margin-left: 6%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.font-weight-bold{
+    font-weight: bold;
+}
+.btn-reply{
+    cursor:pointer;
 }
