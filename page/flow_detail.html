@@ -10,9 +10,13 @@
     <!-- Bootstrap -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="../dist/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="http://zgs225.github.io/easy-tree/dist/css/easyTree.min.css">-->
     <!--<link rel="stylesheet" href="../style/main-min.css">-->
+
+
     <link rel="stylesheet" href="../style/layout.css">
     <link rel="stylesheet" href="../style/color.css">
+    <link rel="stylesheet" href="../style/easyTree.css">
 
     <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
     <script src="../script/global.js"></script>
@@ -91,7 +95,39 @@
         </div>
         <div class="col-md-8">
             <div class="flow-tree">
+                <div>
+                    <p class="tree-hint btn-red-font"><span class="glyphicon glyphicon-eye-open"></span><span>鼠标移动至节点上可查看详细描述</span></p>
+                </div>
+                <div class="easy-tree">
+                    <ul>
+                        <li desc=" 因为我希望生活有意义
+                           我希望活得深刻
+                           吸取生命中所有的精华
+                           把非生命的一切都击溃
+                           以免当我生命终结
+                           我发现自己从没有活过
+                           我们读诗写诗，非为它的灵巧．我们读诗写诗，因为我们是人类的一员．而人类充满了热情．
+                           医药，法律，商业，工程，这些都是高贵的理想，并且是维生的必需条件．
+                           但是诗，美，浪漫，爱，这些才是我们生存的原因">点我弹出/隐藏弹出框
+                            <ul>
+                                <li desc="信息调研信息框测试">信息调研</li>
+                                <li> 信息正确性校验
+                                    <ul>
+                                        <li>测试计划1</li>
+                                        <li>飞天计划2</li>
+                                    </ul>
+                                </li>
+                                <li>与我们结合</li>
+                            </ul>
+                        </li>
+                        <li>报销流程A
+                            <ul>
+                                <li>报销流程</li>
 
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="flow-description">
                 <h4 class="focus-black-font">解释说明</h4>
@@ -122,7 +158,7 @@
                            <span class="glyphicon glyphicon-user"></span>
                            <span class="focus-black-font">卡卡西</span>
                            <span>2017-03-10  11:58:50</span>
-                           <span class="btn-reply btn-red-font font-weight-bold">回复</span>
+
                        </p>
                        <div class="comment-content">我步入丛林
                            因为我希望生活有意义
@@ -134,6 +170,15 @@
                            我们读诗写诗，非为它的灵巧．我们读诗写诗，因为我们是人类的一员．而人类充满了热情．
                            医药，法律，商业，工程，这些都是高贵的理想，并且是维生的必需条件．
                            但是诗，美，浪漫，爱，这些才是我们生存的原因．
+                           <p class="comment-replay-btn">
+                             <span class="btn-reply btn-red-font font-weight-bold">回复</span>
+                           </p>
+                           <textarea class="form-control" rows="3" placeholder="我要回复"></textarea>
+                           <p class="comment-replay-btn">
+                               <span>取消</span>
+                               <span>回复</span>
+
+                           </p>
                        </div>
                         <ul class="reply-content">
                             <li>
@@ -165,10 +210,13 @@
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="focus-black-font">卡卡西</span>
                             <span>2017-03-10  11:58:50</span>
-                            <span class="btn-reply btn-red-font font-weight-bold">回复</span>
+
                         </p>
                         <div class="comment-content">
                             just for test
+                            <p class="comment-replay-btn">
+                                <span class="btn-reply btn-red-font font-weight-bold">回复</span>
+                            </p>
                         </div>
                     </li>
                     <li>
@@ -176,10 +224,13 @@
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="focus-black-font">卡卡西</span>
                             <span>2017-03-10  11:58:50</span>
-                            <span class="btn-reply btn-red-font font-weight-bold">回复</span>
+
                         </p>
                         <div class="comment-content">
                             just for test
+                            <p class="comment-replay-btn">
+                                <span class="btn-reply btn-red-font font-weight-bold">回复</span>
+                            </p>
                         </div>
                     </li>
 
@@ -192,13 +243,19 @@
     <div class=" row flow-repo-footer">
         <span>如需帮助，请拨打110....</span>
     </div>
-
+    <div class="popover fade right in" style="display: none;min-height: 60px">
+        <div class="arrow" style="top: 25px"></div><h3 class="popover-title" style="display: none;"></h3>
+        <div class="popover-content"></div>
+    </div>
 </div>
 
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="../js/modal.js"></script>
+<script src="../js/easyTree.js"></script>
 
+<script src="../js/tooltip.js"></script>
+<script src="../js/popover.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -207,6 +264,11 @@
             display_childmenu(e);
         });
 
+        $('.easy-tree').EasyTree({
+            showtips:true
+        });
+
+        $('[data-toggle="popover"]').popover()
     });
     function display_childmenu(target) {
         var menu_ul=$(target.currentTarget).find('ul');
