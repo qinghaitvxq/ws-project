@@ -202,8 +202,14 @@
 
             if(options.showtips){
 
-                $(easyTree).delegate('li.parent_li  span', 'mouseenter mouseleave', function (e) {
+                var popover="<div class='popover fade right in tree-info-pover gray-font'"
+                           +"style='display: none;min-height: 60px;'>"
+                           +"<div class='arrow' style='top: 25px'></div><h3 class='popover-title' style='display: none;'></h3>"
+                           +"<div class='popover-content'></div>"
+                           +"</div>";
+                $('body').append($(popover));
 
+                $(easyTree).delegate('li.parent_li  span', 'mouseenter mouseleave', function (e) {
                     var desc=$(this).parent('li').attr('desc');
                     if(!desc || desc.length<=0){
                         desc="暂无描述信息";
@@ -213,6 +219,7 @@
                     var top=cur_ele_pos.top;
                     var width=$(this).width();
                     var height=$(this).height();
+
                     $('.popover').css({
                         "position":"absolute",
                         "display":"block",
@@ -221,7 +228,7 @@
                     }).find('.popover-content').text(desc);
 
                     if(e.type=="mouseleave"){
-                        $('.popover').hide();
+                         $('.popover').hide();
                     }
 
              });
@@ -277,9 +284,7 @@
                         }
 
                     }
-
                     e.stopPropagation();
-
                 });
             }
 

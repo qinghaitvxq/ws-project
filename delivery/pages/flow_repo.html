@@ -12,11 +12,7 @@
     <link rel="stylesheet" href="../style/bootstrap.css">
     <!--<link rel="stylesheet" href="../style/main-min.css">-->
     <link rel="stylesheet" href="../style/main.css">
-
     <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
-    <script src="../script/global.js"></script>
-
-
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -190,22 +186,47 @@
                                 <label >编辑流程图(最多可添加三级节点)</label>
                             </div>
                             <div class="form-group">
-                                <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
-                                <input  class="form-control" placeholder="输入一级节点名称" >
-                                <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                <ul class="flow_parent_ul">
+                                    <li class="flow_parent_li">
+                                        <div class="node_out_div">
+                                            <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                            <input  class="form-control" placeholder="输入一级节点名称" >
+                                            <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                        </div>
+                                        <ul>
+                                            <li >
+                                                <div class="node_out_div">
+                                                    <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                                    <input  class="form-control" placeholder="输入二级节点名称" >
+                                                    <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                </div>
 
+                                            <li  class="flow_parent_li">
+                                                <div class="node_out_div">
+                                                    <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                                    <input  class="form-control" placeholder="输入二级节点名称" >
+                                                    <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <div class="node_out_div">
+                                                            <div class="edit-area"><span class="glyphicon glyphicon-trash"></span></div>
+                                                            <input  class="form-control" placeholder="输入三级节点名称" >
+                                                            <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="form-group">
-                                <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
-                                <input  class="form-control" placeholder="输入二级节点名称" >
-                                <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                            </div>
-
                             <div class="add-fnode"><span class="glyphicon glyphicon-plus "></span><span>添加一级节点</span></div>
                             <div class="form-group">
                                 <label >流程说明</label>
                                 <textarea class="form-control" rows="3"></textarea>
                             </div>
+
                             <div class="form-group">
                                 <button type="button" class="btn btn-default">添加附件</button>
 

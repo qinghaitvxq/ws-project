@@ -219,9 +219,10 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 }
 .edit-area  span{
     display: inline-block;
-    padding-left:10px;
+    padding-left:8px;
     padding-top: 10px;
     cursor:pointer;
+
 }
 .add-fnode span{
     cursor:pointer;
@@ -326,4 +327,38 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     display:inline-block;
     margin-left: 8px;
     cursor: pointer;
+}
+.tree-info-pover{
+    padding: 14px;
+    line-height: 25px;
+    font-size: 14px;
+    max-width:40%;
+}
+.flow_parent_ul li{
+    list-style: none;
+    padding-top:10px;
+}
+
+.flow_parent_li{
+    position: relative;
+
+}
+
+.flow_parent_li ul{
+    padding-left: 30px;
+}
+.flow_parent_li::before{
+  content: '';
+    display:block;
+  position: absolute;
+  top:130px;
+  left:5px;
+  border-left:solid 1px gray;
+  border-bottom:solid 1px gray;
+  height:20px;
+  width:20px;
+
+}
+.flow_parent_li .form-group{
+    margin-bottom:0;
 }

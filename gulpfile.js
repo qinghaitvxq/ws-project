@@ -70,7 +70,7 @@ gulp.task('js',function () {
 });
 
 gulp.task('html',function () {
-    gulp.src('page/flow_repo.html')
+    gulp.src('page/flow_detail.html')
         .pipe(gulp.dest('delivery/pages'));
 });
 

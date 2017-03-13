@@ -70,9 +70,9 @@
                     <span class="down-icon" ></span>
                  </a>
                     <ul class="dropdown-ul" >
-                        <li>市场调研hah</li>
-                        <li>竞品调研</li>
-                        <li>待到春花烂漫时</li>
+                        <li><a href="#">市场调研hah</a></li>
+                        <li><a href="#">市场调研hah</a></li>
+                        <li><a href="#">市场调研hah</a></li>
                     </ul>
                  </li>
                  <li ><a href="#">研发类
@@ -191,23 +191,48 @@
                           <div class="form-group">
                               <label >编辑流程图(最多可添加三级节点)</label>
                           </div>
-                          <div class="form-group">
-                              <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
-                              <input  class="form-control" placeholder="输入一级节点名称" >
-                              <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-
-                          </div>
                            <div class="form-group">
-                               <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
-                                  <input  class="form-control" placeholder="输入二级节点名称" >
-                                  <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                            </div>
+                                  <ul class="flow_parent_ul">
+                                      <li class="flow_parent_li">
+                                          <div class="node_out_div">
+                                              <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                              <input  class="form-control" placeholder="输入一级节点名称" >
+                                              <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                          </div>
+                                         <ul>
+                                             <li >
+                                                 <div class="node_out_div">
+                                                     <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                                     <input  class="form-control" placeholder="输入二级节点名称" >
+                                                     <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                 </div>
 
-                             <div class="add-fnode"><span class="glyphicon glyphicon-plus "></span><span>添加一级节点</span></div>
+                                             <li  class="flow_parent_li">
+                                                 <div class="node_out_div">
+                                                     <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                                     <input  class="form-control" placeholder="输入二级节点名称" >
+                                                     <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                 </div>
+                                                <ul>
+                                                    <li>
+                                                        <div class="node_out_div">
+                                                            <div class="edit-area"><span class="glyphicon glyphicon-trash"></span></div>
+                                                            <input  class="form-control" placeholder="输入三级节点名称" >
+                                                            <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                             </li>
+                                         </ul>
+                                      </li>
+                                  </ul>
+                              </div>
+                          <div class="add-fnode"><span class="glyphicon glyphicon-plus "></span><span>添加一级节点</span></div>
                              <div class="form-group">
                                   <label >流程说明</label>
                                   <textarea class="form-control" rows="3"></textarea>
-                             </div>
+                          </div>
+
                               <div class="form-group">
                                   <button type="button" class="btn btn-default">添加附件</button>
 

@@ -9,17 +9,13 @@
 
     <!-- Bootstrap -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="../dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../style/bootstrap.css">
     <!--<link rel="stylesheet" href="http://zgs225.github.io/easy-tree/dist/css/easyTree.min.css">-->
     <!--<link rel="stylesheet" href="../style/main-min.css">-->
-
-
-    <link rel="stylesheet" href="../style/layout.css">
-    <link rel="stylesheet" href="../style/color.css">
+    <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/easyTree.css">
 
     <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
-    <script src="../script/global.js"></script>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,7 +25,8 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 
     <![endif]-->
-</head><body class="flow-repo-body">
+</head>
+<body class="flow-repo-body">
 <div class="container-fluid">
     <div class="row header">
         <div class="col-md-3"></div>
@@ -76,8 +73,8 @@
             </div>
             <div class="flow-oper-btns">
             <button class="btn red-btn new-flow-icon"> <span class="glyphicon glyphicon-plus"></span><span>创建新流程</span></button>
-                <button class="btn green-btn" data-toggle="modal" data-target="#Edit_flow_Modal">编辑流程</button>
-                <button class="btn green-btn" data-toggle="modal" data-target="#startPK_Modal">发起PK</button>
+            <button class="btn green-btn" data-toggle="modal" data-target="#Edit_flow_Modal">编辑流程</button>
+            <button class="btn green-btn" data-toggle="modal" data-target="#startPK_Modal">发起PK</button>
             </div>
         </div>
 
@@ -242,7 +239,6 @@
     <div class=" row flow-repo-footer">
         <span>如需帮助，请拨打110....</span>
     </div>
-
     <!--发起PK 弹出框-->
     <div class="modal fade" id="startPK_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -377,16 +373,14 @@
         </div>
     </div>
 
-
 </div>
 
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="../js/modal.js"></script>
-<script src="../js/easyTree.js"></script>
-
-<script src="../js/tooltip.js"></script>
-<script src="../js/popover.js"></script>
+<script src="../scripts/modal.js"></script>
+<script src="../scripts/easyTree.js"></script>
+<script src="../scripts/tooltip.js"></script>
+<script src="../scripts/popover.js"></script>
 
 <script>
     $(document).ready(function () {
