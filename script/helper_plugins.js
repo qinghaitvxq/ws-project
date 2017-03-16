@@ -29,16 +29,23 @@ $('父容器').no_data_tips({
                 "position":"relative"
             });
         }
+
+        return this;
     }
 })(jQuery);
 
-/*文件上传*/
+/*添加附件*/
 (function ($) {
 
     var methods={
+
         init:function (options) {
-            var myfiles=new Array();
-            console.log('this is init');
+            console.log('check argument');
+            console.log(options);
+            console.log(arguments);
+
+            this.data('files',new Array());
+
             var _this=this;
 
             var a_element="<a href='#' class='btn btn-default a-upload' ></a>",
@@ -54,74 +61,75 @@ $('父容器').no_data_tips({
             this.on('change',function () {
 
                 var filelist=this.files;
-                if(filelist.length==0) return;
 
+                if(filelist.length==0) return;
                 for(var i=0;i<filelist.length;i++){
                     var filename=filelist[i].name;
                     //检查同名
-                    for(var j=0;j<_this.myfiles.length;j++){
-                        if(filename==_this.myfiles[j].name)
-                            return;
+                    var exist=false;
+                    for(var j=0;j<_this.data("files").length;j++){
+                        if(filename ==_this.data("files")[j].name){
+                            exist=true;
+                            break;
+                        }
                     }
-                    _this.myfiles.push(filelist[i]);
-                    var li_element="<li><span class='file_name'>"+filename
-                        +"</span><span class='glyphicon glyphicon-remove btn-red-font pointer_span del'></span>"
-                        +"</li>";
-                    $('.filelist').append(li_element);
+                    if(!exist) {
+                        //添加文件对象到对象data里
+                        _this.data("files").push(filelist[i]);
+
+                        var li_element = "<li><span class='file_name'>" + filename
+                            + "</span><span class='glyphicon glyphicon-remove btn-red-font pointer_span del'></span>"
+                            + "</li>";
+
+                        $('.filelist').append(li_element);
+                    }
                 }
             });
+
             //删除按钮事件
-            $(".filelist").on("click",".del",function (e) {
+            $(".filelist").on("click.file_del",".del",function (e) {
                 var _delobj=$(e.target);
                 var filename=_delobj.parent().find('.file_name').text();
 
                 //删除对应文件数组中的元素
-                for(var j=0;j<_this.myfiles.length;j++){
-                    if(filename==_this.myfiles[j].name){
-                        this.myfiles.splice(j,1);
+                for(var j=0;j<_this.data("files").length;j++){
+
+                    if(filename==_this.data("files")[j].name){
+                       _this.data("files").splice(j,1);
                     }
                 }
+                //清除原文件域中的文件,防止删除某个文件后再次添加时失败
+                _this.val("");
                 _delobj.parent().remove();
             });
-        },
-        getfiles:function () {
-            console.log('this is getfiles');
-            return this.myfiles;
+
+            //编辑,已存在附件情况
+            if(options && options.filelist.length>0){
+                //添加附件按钮不可见
+                _this.parent().remove();
+                //附件列表显示
+                for(var i=0;i<options.filelist.length;i++){
+                    var li_element = "<li><span class='file_name'>" + options.filelist[i]
+                        + "</span><span class='glyphicon glyphicon-remove btn-red-font pointer_span del'></span>"
+                        + "</li>";
+
+                    $('.filelist').append(li_element);
+                }
+            }
+            //解绑删除按钮事件
+            $(".filelist").unbind(".file_del");
+
         }
     }
     $.fn.file_upload=function (method) {
-        var myfiles=new Array();
-        if(method=="init"){
-          myfiles=methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+
+        // Method calling logic
+        if ( methods[method] ) {
+            return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+        } else if ( typeof method === 'object' || ! method ) {
+            return methods.init.apply( this, arguments );
+        } else {
+            $.error( 'Method ' +  method + ' does not exist on jQuery.file_upload' );
         }
-        console.log('not...sure');
-        console.log(myfiles);
-
-        // if ( methods[method] ) {
-        //     return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-        // } else if ( typeof method === 'object' || ! method ) {
-        //     return methods.init.apply( this, arguments );
-        // } else {
-        //     $.error( 'Method ' +  method + ' does not exist on jQuery.tooltip' );
-        // }
-
-        // <div class="file_upload_area gray-font">
-        //     <ul class="none_style_ul">
-        //     <li><span>国际竞品公司调研报告.doc</span><span class="glyphicon glyphicon-remove btn-red-font pointer_span"></span></li>
-        //     <li><span>电脑申请流程图.png</span><span class="glyphicon glyphicon-remove btn-red-font pointer_span"></span></li>
-        //     <li><span>国际竞品公司调研报告for test.xls</span><span class="glyphicon glyphicon-remove btn-red-font pointer_span"></span></li>
-        //     </ul>
-        //     <a href="javascript:;" class="btn btn-default a-upload  ">
-        //     <input type="file" name="" id="">
-        //     <span >添加附件</span>
-        //     </a>
-        //     </div>
-
-        // var settings=$.extend({
-        //
-        // },options);
-
-
-
     }
 })(jQuery);

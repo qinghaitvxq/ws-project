@@ -247,14 +247,24 @@
 
         $('[data-toggle="popover"]').popover();
 
-//        var files= $('#my_file_upload').file_upload();
-//        console.log('查看返回结果');
-//        console.log(files);
+        var currentfiles=[
+            "hello1.pdf",
+            "hello2.pdf"
+        ];
 
-        $('#my_file_upload').file_upload('init');
+//        $('#my_file_upload').file_upload('init');
+
+
+        $('#my_file_upload').file_upload('init',{
+            filelist:currentfiles
+        });
+
+         $('.filelist').find('.del').click(function () {
+             alert('删除我啦');
+         });
 
         $("#tt").click(function () {
-          console.log( $('#my_file_upload').file_upload('getfiles'))
+          console.log( $('#my_file_upload').data("files"));
         });
 
 
