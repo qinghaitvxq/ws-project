@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>流程展示页</title>
+
+    <!-- Bootstrap -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="../dist/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="http://zgs225.github.io/easy-tree/dist/css/easyTree.min.css">-->
+    <!--<link rel="stylesheet" href="../style/main-min.css">-->
+
+
+    <link rel="stylesheet" href="../style/layout.css">
+    <link rel="stylesheet" href="../style/color.css">
+    <link rel="stylesheet" href="../style/easyTree.css">
+
+    <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
+    <script src="../script/global.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head><body class="flow-repo-body">
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <ul class="nav-ws">
+                <li  role="presentation"><a href="#"  class="active">流程库</a></li>
+                <li  role="presentation" ><a href="#">项目</a></li>
+                <li  role="presentation" ><a href="#">我的</a></li>
+                <li  role="presentation" ><a href="#">创建项目</a></li>
+                <li  role="presentation" ><a href="#">管理面板</a></li>
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <ul class="userInfo">
+                <li  role="presentation"><a href="#" >使用说明</a></li>
+                <!--<li  role="presentation" ><a href="#">搜索</a></li>-->
+                <!--<li  role="presentation" ><a href="#">个人设置</a></li>-->
+                <li  role="presentation" class="userInfo-li" >
+                    <a href="#">卡卡西
+                        <span class="down-icon" ></span>
+                    </a>
+
+                    <ul class="userInfo-dropdown-ul" >
+                        <li>个人设置</li>
+                        <li>退出</li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="row navigator">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 nav-bar-detail">
+
+            <div class="flow-info gray-font">
+                <span class="glyphicon glyphicon-paperclip"></span>
+                <span>产品类</span>
+                <span>-</span>
+                <span>市场调研</span>
+                <span>-</span>
+                <span>竞争分析工作流程</span>
+            </div>
+            <div class="flow-oper-btns">
+                <button class="btn red-btn new-flow-icon"> <span class="glyphicon glyphicon-plus"></span><span>创建新流程</span></button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row main-content flow-detail-content">
+        <div class="col-md-2">
+            <ul class="detail-slider-menu btn-red-font">
+                <li><span>流程</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+                <li><span>变动记录</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+                <li><span>参考文件</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+                <li><span>项目</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+                <li><span>管理</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="flow-tree">
+                <div>
+                    <p class="tree-hint btn-red-font"><span class="glyphicon glyphicon-eye-open"></span><span>鼠标移动至节点上可查看详细描述</span></p>
+                </div>
+                <div class="easy-tree">
+                    <ul>
+                        <li desc=" 因为我希望生活有意义
+                           我希望活得深刻
+                           吸取生命中所有的精华
+                           把非生命的一切都击溃
+                           以免当我生命终结
+                           我发现自己从没有活过
+                           我们读诗写诗，非为它的灵巧．我们读诗写诗，因为我们是人类的一员．而人类充满了热情．
+                           医药，法律，商业，工程，这些都是高贵的理想，并且是维生的必需条件．
+                           但是诗，美，浪漫，爱，这些才是我们生存的原因">点我弹出/隐藏弹出框
+                            <ul>
+                                <li desc="信息调研信息框测试">信息调研</li>
+                                <li> 信息正确性校验
+                                    <ul>
+                                        <li>测试计划1</li>
+                                        <li>飞天计划2</li>
+                                    </ul>
+                                </li>
+                                <li>与我们结合</li>
+                            </ul>
+                        </li>
+                        <li>报销流程A
+                            <ul>
+                                <li>报销流程</li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flow-description">
+                <h4 class="focus-black-font">解释说明</h4>
+                <p class="gray-font">
+                    不要温和地走进那个良夜
+                    白昼将尽，暮年仍应燃烧咆哮
+                    怒斥吧，怒斥光的消逝
+                    虽然在白昼尽头，智者自知该踏上夜途
+                    因为言语未曾迸发出电光，他们
+                    不要温和地走进那个良夜
+                    好人，当最后一浪过去，高呼着他们脆弱的善行
+                    本来也许可以在绿湾上快意地舞蹈
+                    所以，他们怒斥，怒斥光的消逝
+                    狂人抓住稍纵即逝的阳光，为之歌唱
+                    并意识到，太迟了，他们过去总为时光伤逝
+
+                </p>
+            </div>
+            <div class="flow-comments gray-font">
+                <ul>
+                    <li>
+                        <p class="comment-info">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="focus-black-font">卡卡西</span>
+                            <span>2017-03-10  11:58:50</span>
+
+                        </p>
+                        <div class="comment-content">我步入丛林
+                            因为我希望生活有意义
+                            我希望活得深刻
+                            吸取生命中所有的精华
+                            把非生命的一切都击溃
+                            以免当我生命终结
+                            我发现自己从没有活过
+                            我们读诗写诗，非为它的灵巧．我们读诗写诗，因为我们是人类的一员．而人类充满了热情．
+                            医药，法律，商业，工程，这些都是高贵的理想，并且是维生的必需条件．
+                            但是诗，美，浪漫，爱，这些才是我们生存的原因．
+
+                        </div>
+                        <ul class="reply-content">
+                            <li>
+                                <p class="comment-info">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    <span class="focus-black-font">鸣人</span>
+                                    <span>2017-03-10  11:58:50</span>
+
+                                </p>
+                                <div class="comment-content">
+                                    我要吃泡面。。。
+                                </div>
+                            </li>
+                            <li>
+                                <p class="comment-info">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    <span class="focus-black-font">小樱</span>
+                                    <span>2017-03-10  11:58:50</span>
+
+                                </p>
+                                <div class="comment-content">
+                                    我也要吃泡面。。。
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="comment-info">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="focus-black-font">卡卡西</span>
+                            <span>2017-03-10  11:58:50</span>
+
+                        </p>
+                        <div class="comment-content">
+                            just for test
+
+                        </div>
+                    </li>
+                    <li>
+                        <p class="comment-info">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="focus-black-font">卡卡西</span>
+                            <span>2017-03-10  11:58:50</span>
+
+                        </p>
+                        <div class="comment-content">
+                            just for test
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class=" row flow-repo-footer">
+        <span>如需帮助，请拨打110....</span>
+    </div>
+
+
+
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../js/modal.js"></script>
+<script src="../js/easyTree.js"></script>
+
+<script src="../js/tooltip.js"></script>
+<script src="../js/popover.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $(".userInfo-li").on("click",function (e) {
+            display_childmenu(e);
+        });
+
+        $('.easy-tree').EasyTree({
+            showtips:true
+        });
+
+        $('[data-toggle="popover"]').popover()
+    });
+    function display_childmenu(target) {
+        var menu_ul=$(target.currentTarget).find('ul');
+        if(!menu_ul||menu_ul.length==0 ) return;
+        if(target.type=="mouseenter"){
+            menu_ul.show();
+        }
+        if(target.type=="mouseleave"){
+            menu_ul.hide();
+        }
+        if(target.type=="click"){
+            var isVilible=menu_ul.is(":visible");
+            if(isVilible){
+                menu_ul.hide();
+            }
+            else {
+                menu_ul.show();
+            }
+        }
+    }
+</script>
+</html>

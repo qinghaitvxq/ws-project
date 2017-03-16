@@ -286,11 +286,16 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     clear:both;
 
 }
-.flow-comments ul{
+.flow-comments ul,
+.file_list_ul
+{
     list-style: none;
 }
 .flow-comments>ul li{
   margin-top: 12px;
+}
+.file_list_ul li{
+    line-height: 25px;
 }
 .comment-content{
     padding:18px 16px;
@@ -362,6 +367,77 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 }
 .flow_parent_li .form-group{
     margin-bottom:0;
+}
+/*变动记录*/
+.flow-change-log{
+  min-height: 500px;
+    padding: 25px;
+}
+.flow-change-log>ul{
+    list-style: none;
+}
+
+.flow-change-log>ul>li>ul{
+    list-style-type: decimal;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+.flow-change-log>ul>li>ul>li{
+   line-height: 22px;
+}
+.flow-change-log>ul>li::after{
+    content: '';
+    display: block;
+    width:100%;
+    margin-top:10px;
+    margin-bottom: 20px;
+    border-bottom: solid 2px rgba(206,206,206,0.62);
+    clear: both;
+}
+
+.flow-change-log>ul>li span{
+    display:inline-block;
+    margin-right:40px;
+}
+.flow-change-log>ul>li a{
+    display:inline-block;
+    float: right;
+    margin-bottom: 3px;
+}
+.flow-name-span{
+    font-size: medium;
+    font-weight: bold;
+
+}
+.ref_doc_content{
+    min-height:500px;
+}
+.upload-btn-div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.upload-btn.upload-btn{
+    width:110px;
+    margin-left: 10px;
+}
+.file-table > tbody > tr > td{
+    vertical-align: middle;
+}
+.file_name_div{
+    position:relative;
+    min-width:150px;
+}
+.file_name_div .file_name_span{
+    display: inline-block;
+    position: absolute;
+    top:50%;
+    -webkit-transform:translateY(-50%);
+            transform:translateY(-50%);
+    margin-left: 6px;
+}
+.pointer_span{
+    cursor: pointer;
 }
 /*登录页颜色样式*/
 .login-title span{
@@ -470,3 +546,21 @@ input.placeholder{
 }
 /*流程展示页*/
 
+/*变动记录*/
+.flow-change-log{
+ color: gray;
+  background-color: white;
+}
+.flow-name-span{
+    color: rgba(0, 0, 0, 0.6)
+}
+.ref_doc_content{
+    background-color: white;
+}
+/*文件上传*/
+.file-table thead{
+    background-color: #f9f9f9;
+}
+.file_name_span{
+    color:black;
+}

@@ -105,3 +105,21 @@ input.placeholder{
 }
 /*流程展示页*/
 
+/*变动记录*/
+.flow-change-log{
+ color: gray;
+  background-color: white;
+}
+.flow-name-span{
+    color: rgba(0, 0, 0, 0.6)
+}
+.ref_doc_content{
+    background-color: white;
+}
+/*文件上传*/
+.file-table thead{
+    background-color: #f9f9f9;
+}
+.file_name_span{
+    color:black;
+}
