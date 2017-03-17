@@ -100,41 +100,41 @@
     <div class="row main-content">
         <div class="col-md-1 "></div>
         <div class="col-md-10 flow-repo-content" >
-            <table class="table table-striped">
-                <thead>
-                <th>第一类别</th>
-                <th>第二类别</th>
-                <th>名称</th>
-                <th>维护人</th>
-                <th>更新时间</th>
-                </thead>
-                <tbody>
-                <tr><td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                </tr>
-                <tr><td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                </tr>
-                <tr><td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                </tr>
-                <tr><td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                    <td>hello</td>
-                </tr>
-                </tbody>
-            </table>
+            <!--<table class="table table-striped">-->
+                <!--<thead>-->
+                <!--<th>第一类别</th>-->
+                <!--<th>第二类别</th>-->
+                <!--<th>名称</th>-->
+                <!--<th>维护人</th>-->
+                <!--<th>更新时间</th>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr><td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                <!--</tr>-->
+                <!--<tr><td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                <!--</tr>-->
+                <!--<tr><td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                <!--</tr>-->
+                <!--<tr><td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                    <!--<td>hello</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
         </div>
         <div class="col-md-1" ></div>
     </div>
@@ -228,8 +228,11 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="button" class="btn btn-default">添加附件</button>
+                                <input type="file" name="" id="my_file_upload" multiple="multiple">
+                            </div>
 
+                            <div class="form-group" id="edit-file-div">
+                                <input type="file" name="" id="my_file_upload_edit" multiple="multiple">
                             </div>
                         </form>
                     </div>
@@ -248,6 +251,7 @@
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="../scripts/modal.js"></script>
+<script src="../scripts/helper_plugins.js"></script>
 <script>
     $(document).ready(function () {
 
@@ -257,6 +261,23 @@
 
         $(".userInfo-li").on("click",function (e) {
             display_childmenu(e);
+        });
+
+        $('.flow-repo-content').no_data_tips();
+
+        //新建流程- 附件
+        $('#my_file_upload').file_upload('init');
+
+        var currentfiles=[
+            "hello1.pdf",
+            "hello2.pdf"
+        ];
+        //编辑流程-附件
+        $('#my_file_upload_edit').file_upload('init',{
+            filelist:currentfiles,
+            delserverfile:function(filename){
+                console.log('要从服务器上删除的文件是：'+filename);
+            }
         });
 
     });

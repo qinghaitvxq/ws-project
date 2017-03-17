@@ -287,7 +287,8 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 
 }
 .flow-comments ul,
-.file_list_ul
+.file_list_ul,
+.none_style_ul
 {
     list-style: none;
 }
@@ -438,6 +439,65 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 }
 .pointer_span{
     cursor: pointer;
+}
+
+
+.a-upload {
+    padding: 8px 25px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    /*background: #fafafa;*/
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+.file_upload_area>ul>li{
+    line-height: 25px;
+}
+.file_upload_area>ul>li span{
+    display:inline-block;
+    margin-right: 8px;
+}
+
+.no_data{
+ width:50%;
+ padding:30px;
+ position: absolute;
+ top:50%;
+ left:50%;
+ -webkit-transform: translate(-50%,-50%);
+         transform: translate(-50%,-50%);
+ font-size: 2em;
+ text-align: center;
+ color:gray;
+
+}
+.management-operate{
+    padding-top: 15px;
 }
 /*登录页颜色样式*/
 .login-title span{

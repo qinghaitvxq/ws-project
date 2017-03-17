@@ -106,6 +106,7 @@
       <div class="row main-content">
           <div class="col-md-1 "></div>
           <div class="col-md-10 flow-repo-content" >
+
               <!--<table class="table table-striped">-->
                 <!--<thead>-->
                   <!--<th>第一类别</th>-->
@@ -244,9 +245,13 @@
                           </div>
 
                               <div class="form-group">
-                                  <button type="button" class="btn btn-default">添加附件</button>
-
+                                  <input type="file" name="" id="my_file_upload" multiple="multiple">
                               </div>
+
+                              <div class="form-group" id="edit-file-div">
+                                  <input type="file" name="" id="my_file_upload_edit" multiple="multiple">
+                              </div>
+
                       </form>
                       </div>
                   </div>
@@ -278,6 +283,20 @@
        });
        $('.flow-repo-content').no_data_tips();
 
+       //新建流程- 附件
+       $('#my_file_upload').file_upload('init');
+
+       var currentfiles=[
+           "hello1.pdf",
+           "hello2.pdf"
+       ];
+       //编辑流程-附件
+       $('#my_file_upload_edit').file_upload('init',{
+           filelist:currentfiles,
+           delserverfile:function(filename){
+               console.log('要从服务器上删除的文件是：'+filename);
+           }
+       });
    });
    function display_childmenu(target) {
        var menu_ul=$(target.currentTarget).find('ul');
