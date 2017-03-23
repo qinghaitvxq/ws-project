@@ -6,10 +6,26 @@
 (function ($) {
     var methods={
         init:function () {
+
+           this.createNode=function (level) {
+               this.node_level=level;
+               this.children_node=[];
+           };
+           this.createNode.prototype={
+               add_child:function () {
+                   
+               },
+               remove_child:function () {
+                   
+               }
+
+           };
+
            this.data('nodelist',[]);
 
            var outdiv="<div class='new-flow-form out_div'></div>";
            this.wrap(outdiv);
+           var _this=this;
 
            this.on('click',function () {
 
@@ -17,7 +33,13 @@
 
               //add first level node
 
-               var f_node="<div class='node_out_div'>"+
+               var new_top_node=new _this.createNode(1);
+               var nodeindex=_this.data("nodelist").length;
+               _this.data("nodelist").push(new_top_node);
+
+               var node_id="node_"+nodeindex;
+
+               var f_node="<div class='node_out_div' id='"+node_id+"'>"+
                    "<div class='edit-area'>"+
                    "<span class='glyphicon glyphicon-plus icon_add_child'></span>"+
                    "<span class='glyphicon glyphicon-trash btn-red-font icon_remove_child'></span>"+
@@ -34,25 +56,13 @@
                             "</ul>"+
                          "</div>";
 
-               // var f_node="<div class='node_out_div'>"+
-               //               "<div class='edit-area'>"+
-               //                 "<span class='glyphicon glyphicon-plus'></span>"+
-               //                 "<span class='glyphicon glyphicon-trash btn-red-font'></span>"+
-               //               "</div>"+
-               //               "<input  class='form-control' placeholder='输入一级节点名称'>"+
-               //               "<textarea class='form-control' rows='3' placeholder='请输入对该流程节点的解释说明'>"+
-               //             "</div>";
-
                $(this).before(p_ele);
-               $(".flow_parent_ul").on('click','.icon_add_child',function () {
+
+               $("#"+node_id).on('click','.icon_add_child',function () {
                    console.log('add child');
 
                });
-
-
-
-
-
+               
            });
 
         }
