@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../style/layout.css">
+    <link rel="stylesheet" href="../style/color.css">
+    <script src="../script/helper_plugins.js"></script>
+<style>
+    .out_div{
+        width:50%;
+        margin:20px auto;
+    }
+</style>
+    <script>
+        $(document).ready(function () {
+            $(".add-fnode").flow_level_node();
+        });
+    </script>
+
+
+</head>
+<body>
+<div class="new-flow-form out_div">
+
+        <div class="form-group">
+            <ul class="flow_parent_ul">
+                <li class="flow_parent_li">
+                    <div class="node_out_div">
+                        <div class="edit-area">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            <span class="glyphicon glyphicon-trash btn-red-font"></span>
+                        </div>
+
+                           <input  class="form-control" placeholder="输入一级节点名称" >
+                           <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+
+                    </div>
+                    <ul>
+                        <li >
+                            <div class=" flow_parent_li node_out_div">
+                                <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash btn-red-font"></span></div>
+                                <input  class="form-control" placeholder="输入二级节点名称" >
+                                <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="node_out_div">
+                                        <div class="edit-area"><span class="glyphicon glyphicon-trash btn-red-font"></span></div>
+                                        <input  class="form-control" placeholder="输入三级节点名称" >
+                                        <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li  class="flow_parent_li">
+                            <div class="node_out_div">
+                                <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash btn-red-font"></span></div>
+                                <input  class="form-control" placeholder="输入二级节点名称" >
+                                <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="node_out_div">
+                                        <div class="edit-area"><span class="glyphicon glyphicon-trash btn-red-font"></span></div>
+                                        <input  class="form-control" placeholder="输入三级节点名称" >
+                                        <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    <div class="add-fnode">
+        <span class="glyphicon glyphicon-plus"></span>
+        <span class="btn_topnode_add">添加一级节点</span>
+    </div>
+</div>
+<div class="add-fnode">
+    <span class="glyphicon glyphicon-plus"></span>
+    <span class="btn_topnode_add">添加一级节点</span>
+</div>
+</div>
+</body>
+</html>

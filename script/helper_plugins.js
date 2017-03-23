@@ -2,6 +2,76 @@
  * Created by caipf on 2017/3/16.
  */
 
+/*创建流程节点*/
+(function ($) {
+    var methods={
+        init:function () {
+           this.data('nodelist',[]);
+
+           var outdiv="<div class='new-flow-form out_div'></div>";
+           this.wrap(outdiv);
+
+           this.on('click',function () {
+
+               var outdiv=$(this).parent();
+
+              //add first level node
+
+               var f_node="<div class='node_out_div'>"+
+                   "<div class='edit-area'>"+
+                   "<span class='glyphicon glyphicon-plus icon_add_child'></span>"+
+                   "<span class='glyphicon glyphicon-trash btn-red-font icon_remove_child'></span>"+
+                   "</div>"+
+                   "<input  class='form-control' placeholder='输入一级节点名称'>"+
+                   "<textarea class='form-control' rows='3' placeholder='请输入对该流程节点的解释说明'></textarea>"+
+                   "</div>";
+
+               var p_ele="<div class='form-group'>"+
+                            "<ul class='flow_parent_ul'>"+
+                               "<li class='flow_parent_li'>"+
+                                    f_node+
+                                 "</li>"+
+                            "</ul>"+
+                         "</div>";
+
+               // var f_node="<div class='node_out_div'>"+
+               //               "<div class='edit-area'>"+
+               //                 "<span class='glyphicon glyphicon-plus'></span>"+
+               //                 "<span class='glyphicon glyphicon-trash btn-red-font'></span>"+
+               //               "</div>"+
+               //               "<input  class='form-control' placeholder='输入一级节点名称'>"+
+               //               "<textarea class='form-control' rows='3' placeholder='请输入对该流程节点的解释说明'>"+
+               //             "</div>";
+
+               $(this).before(p_ele);
+               $(".flow_parent_ul").on('click','.icon_add_child',function () {
+                   console.log('add child');
+
+               });
+
+
+
+
+
+           });
+
+        }
+    }
+    $.fn.flow_level_node=function (method) {
+
+        // Method calling logic
+        if ( methods[method] ) {
+            return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+        } else if ( typeof method === 'object' || ! method ) {
+            return methods.init.apply( this, arguments );
+        } else {
+            $.error( 'Method ' +  method + ' does not exist on jQuery.file_upload' );
+        }
+    }
+})(jQuery);
+
+
+
 //暂无数据提示插件
 /*
 $('父容器').no_data_tips({

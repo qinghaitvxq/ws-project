@@ -216,6 +216,7 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 }
 .edit-area{
     float:right;
+    width:50px;
 }
 .edit-area  span{
     display: inline-block;
@@ -224,10 +225,14 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     cursor:pointer;
 
 }
+.add-fnode{
+    padding: 8px;
+    margin-top: 10px;
+}
 .add-fnode span{
     cursor:pointer;
     display: inline-block;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
 }
 
 
@@ -353,16 +358,29 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 .flow_parent_li ul{
     padding-left: 30px;
 }
-.flow_parent_li::before{
-  content: '';
+/*.flow_parent_li::before{*/
+  /*content: '';*/
+    /*display:block;*/
+  /*position: absolute;*/
+  /*top:130px;*/
+  /*left:5px;*/
+  /*border-left:solid 2px rgba(0, 0, 0, 0.36);*/
+  /*border-bottom:solid 2px rgba(0, 0, 0, 0.36);*/
+  /*height:14px;*/
+  /*width:14px;*/
+
+/*}*/
+
+.flow_add_child::before{
+    content: '';
     display:block;
-  position: absolute;
-  top:130px;
-  left:5px;
-  border-left:solid 1px gray;
-  border-bottom:solid 1px gray;
-  height:20px;
-  width:20px;
+    position: absolute;
+    top:130px;
+    left:5px;
+    border-left:solid 2px rgba(0, 0, 0, 0.36);
+    border-bottom:solid 2px rgba(0, 0, 0, 0.36);
+    height:14px;
+    width:14px;
 
 }
 .flow_parent_li .form-group{
