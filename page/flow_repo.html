@@ -98,6 +98,8 @@
 
          </div>
          <div class="col-md-2 new-flow-div">
+
+             <button class="btn" id="pop" ></span><span>测试</span></button>
              <button class="btn new-flow" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span><span>创建新流程</span></button>
 
          </div>
@@ -106,6 +108,9 @@
       <div class="row main-content">
           <div class="col-md-1 "></div>
           <div class="col-md-10 flow-repo-content" >
+
+              <!-- Modal -->
+
 
               <!--<table class="table table-striped">-->
                 <!--<thead>-->
@@ -142,8 +147,12 @@
                   <!--</tr>-->
                   <!--</tbody>-->
               <!--</table>-->
+              <!--<div class="modal fade in" style="display:block">-->
+                  <!--haahah-->
+              <!--</div>-->
           </div>
           <div class="col-md-1" ></div>
+
       </div>
       <div class=" row flow-repo-footer">
           <span>如需帮助，请拨打110....</span>
@@ -196,7 +205,9 @@
                                   <ul class="flow_parent_ul">
                                       <li class="flow_parent_li">
                                           <div class="node_out_div">
-                                              <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                              <div class="edit-area">
+                                                  <span class="glyphicon glyphicon-plus"></span>
+                                                  <span class="glyphicon glyphicon-trash"></span></div>
                                               <input  class="form-control" placeholder="输入一级节点名称" >
                                               <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
                                           </div>
@@ -236,10 +247,54 @@
                                              </li>
                                          </ul>
                                       </li>
+                                      <li class="flow_parent_li">
+                                          <div class="node_out_div">
+                                              <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                              <input  class="form-control" placeholder="输入一级节点名称" >
+                                              <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                          </div>
+                                          <ul>
+                                              <li >
+                                                  <div class=" flow_parent_li node_out_div">
+                                                      <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                                      <input  class="form-control" placeholder="输入二级节点名称" >
+                                                      <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                  </div>
+                                                  <ul>
+                                                      <li>
+                                                          <div class="node_out_div">
+                                                              <div class="edit-area"><span class="glyphicon glyphicon-trash"></span></div>
+                                                              <input  class="form-control" placeholder="输入三级节点名称" >
+                                                              <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                          </div>
+                                                      </li>
+                                                  </ul>
+                                              </li>
+
+                                              <li  class="flow_parent_li">
+                                                  <div class="node_out_div">
+                                                      <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
+                                                      <input  class="form-control" placeholder="输入二级节点名称" >
+                                                      <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                  </div>
+                                                  <ul>
+                                                      <li>
+                                                          <div class="node_out_div">
+                                                              <div class="edit-area"><span class="glyphicon glyphicon-trash"></span></div>
+                                                              <input  class="form-control" placeholder="输入三级节点名称" >
+                                                              <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
+                                                          </div>
+                                                      </li>
+                                                  </ul>
+                                              </li>
+                                          </ul>
+                                      </li>
                                   </ul>
-                              </div>
+                           </div>
                           <div class="add-fnode"><span class="glyphicon glyphicon-plus "></span><span>添加一级节点</span></div>
-                             <div class="form-group">
+
+
+                              <div class="form-group">
                                   <label >流程说明</label>
                                   <textarea class="form-control" rows="3"></textarea>
                           </div>

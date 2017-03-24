@@ -1,85 +1,185 @@
 /**
  * Created by caipf on 2017/3/16.
  */
+//
+// /*创建流程节点*/
+// (function ($) {
+//     var methods={
+//         init:function (options) {
+//
+//            var _this=this;
+//
+//            var settings=$.extend({
+//                 "Edit":false
+//             },options);
+//
+//            this.createNode=function (level) {
+//                this.title="";
+//                this.content="";
+//                this.index=level;
+//                this.childrenNode=[];
+//            };
+//            //data属性用来存储空间当前的数据信息
+//            this.data('nodelist',[]);
+//
+//            //添加一级节点事件处理
+//            this.on("click",function (e) {
+//                var thisobj=e.currentTarget;
+//                //数据
+//                var fnode_length=_this.data("nodelist").length;
+//                var new_f_node   =new _this.createNode("f"+fnode_length);
+//                _this.data("nodelist").push(new_f_node);
+//
+//                //表现
+//                _this.trigger("datachange",[thisobj,"f"]);
+//            });
+//
+//            //添加子节点事件监听
+//            this.on('click','.flow_parent_ul .glyphicon',function (e) {
+//                e.stopPropagation();
+//
+//                var add=$(e.currentTarget).hasClass("icon_add_child");
+//
+//                var node_index=$(e.currentTarget).attr('nodeindex');
+//                var pos=node_index.split('_');
+//
+//                if(pos.length==2) {
+//                    //添加二级节点
+//                    //data
+//
+//                    var snode_length=_this.data("nodelist")[pos[1]].childrenNode.length;
+//                    var new_s_node   =new _this.createNode(node_index+"_"+snode_length);
+//                    _this.data("nodelist")[pos[1]].childrenNode.push(new_s_node);
+//
+//                    //表现
+//                    var s_index=snode_length;
+//                    _this.trigger("datachange",[e.currentTarget,"s",s_index]);
+//
+//                }else if(pos.length==3){
+//                    //要添加三级节点
+//                    console.log('添加三级节点');
+//                     //data
+//                    var tnode_length=_this.data("nodelist")[pos[1]].childrenNode[pos[2]].childrenNode.length;
+//                    var new_t_node=new _this.createNode(node_index+"_"+tnode_length);
+//                    _this.data("nodelist")[pos[1]].childrenNode[pos[2]].childrenNode.push(new_t_node);
+//
+//                    //表现
+//                    var t_index=tnode_length;
+//                    _this.trigger("datachange",[e.currentTarget,"t",t_index]);
+//                }
+//
+//            });
+//
+//            //删除子节点事件监听
+//            this.on('click','.flow_parent_ul .icon_remove_child',function (e) {
+//                e.stopPropagation();
+//                 alert('hi,要删除子节点啦');
+//             });
+//
+//
+//            // 添加或删除节点时触发
+//             _this.bind('node.update',function (e,para) {
+//                  console.log("node.update happend");
+//                  console.log(e);
+//                  console.log(para);
+//             });
+//             //data变化时触发
+//             _this.bind('datachange',function (e,thisobj,target_node_level,s_index) {
+//                 console.log('datachange');
+//
+//                 //ui 变化  (thisobj是最外层的容器对象)
+//                 if(target_node_level=="f"){
+//                     var nodeid=target_node_level+"_"+(_this.data("nodelist").length-1);
+//
+//                     var f_node="<li class='flow_parent_li' id='"+nodeid+"'>"+
+//                                     "<div class='node_out_div' >"+
+//                                        "<div class='edit-area'>"+
+//                                           "<span class='glyphicon glyphicon-plus icon_add_child' nodeindex='"+nodeid+"'></span>"+
+//                                           "<span class='glyphicon glyphicon-trash btn-red-font icon_remove_child' nodeindex='"+nodeid+"'></span>"+
+//                                        "</div>"+
+//                                        "<input  class='form-control' placeholder='输入一级节点名称'>"+
+//                                        "<textarea class='form-control' rows='3' placeholder='请输入对该流程节点的解释说明'></textarea>"+
+//                                      "</div>"+
+//                                 "</li>";
+//
+//                     $(thisobj).find(".flow_parent_ul").append(f_node);
+//
+//                 }else{
+//
+//                     var nodeindex=$(thisobj).attr('nodeindex')
+//                     var p_ele=_this.find("[id='"+nodeindex+"']");
+//                     if(p_ele.find('ul').length==0){
+//                         p_ele.append("<ul></ul>");
+//                     }
+//                     var nodeid=nodeindex+"_"+s_index;
+//
+//                     var span_add="<span class='glyphicon glyphicon-plus icon_add_child' nodeindex='"+nodeid+"'></span>",
+//                         span_remove="<span class='glyphicon   btn-red-font glyphicon-trash icon_remove_child' nodeindex='"+nodeid+"'></span>";
+//
+//                     var span_html=target_node_level=="s"?(span_add+span_remove):(span_remove);
+//                     var placeholder=target_node_level=="s"?"输入二级节点名称":"输入三级节点名称";
+//
+//
+//                     var s_node="<li id='"+nodeid+"'>"+
+//                                  "<div class='flow_parent_li node_out_div'>"+
+//                                        "<div class='edit-area'>"+
+//                                            span_html+
+//                                        "</div>"+
+//                                        "<input  class='form-control' placeholder='"+placeholder+"'>"+
+//                                        "<textarea class='form-control' rows='3' placeholder='请输入对该流程节点的解释说明'></textarea>"+
+//                                   "</div>"+
+//                                 "</li>";
+//
+//                     p_ele.find(">ul").append(s_node);
+//                 }
+//             })
+//             //删除数据时触发
+//             _this.bind('removedata',function (e) {
+//
+//             });
+//         }
+//     }
+//
+//     //方法调用
+//     $.fn.flow_level_node=function (method) {
+//         // Method calling logic
+//         if ( methods[method] ) {
+//             return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+//         } else if ( typeof method === 'object' || ! method ) {
+//             return methods.init.apply( this, arguments );
+//         } else {
+//             $.error( 'Method ' +  method + ' does not exist on jQuery.file_upload' );
+//         }
+//     }
+//
+// })(jQuery);
 
-/*创建流程节点*/
+
+
+//弹框提示插件
+/*
+ $('父容器').no_data_tips({
+ 'tips':'string' ---你想提示的信息，默认为no data to display
+ 'data':number ---默认为0,出现提示字样，大于0，则删除字样
+ );
+ */
 (function ($) {
-    var methods={
-        init:function () {
+    $.fn.modal_info=function (options) {
 
-           this.createNode=function (level) {
-               this.node_level=level;
-               this.children_node=[];
-           };
-           this.createNode.prototype={
-               add_child:function () {
-                   
-               },
-               remove_child:function () {
-                   
-               }
+        var settings=$.extend({
+            'tips':'操作成功'
+        },options);
 
-           };
+        var modal="<div class='modal-overlay'>"+
+                        "<div class='modal-data'>"+
+                            "<p>点击<a onclick='overlay()' href=''> 这里</a>关闭</p>"+
+                        "</div>"+
+                       "</div>";
 
-           this.data('nodelist',[]);
-
-           var outdiv="<div class='new-flow-form out_div'></div>";
-           this.wrap(outdiv);
-           var _this=this;
-
-           this.on('click',function () {
-
-               var outdiv=$(this).parent();
-
-              //add first level node
-
-               var new_top_node=new _this.createNode(1);
-               var nodeindex=_this.data("nodelist").length;
-               _this.data("nodelist").push(new_top_node);
-
-               var node_id="node_"+nodeindex;
-
-               var f_node="<div class='node_out_div' id='"+node_id+"'>"+
-                   "<div class='edit-area'>"+
-                   "<span class='glyphicon glyphicon-plus icon_add_child'></span>"+
-                   "<span class='glyphicon glyphicon-trash btn-red-font icon_remove_child'></span>"+
-                   "</div>"+
-                   "<input  class='form-control' placeholder='输入一级节点名称'>"+
-                   "<textarea class='form-control' rows='3' placeholder='请输入对该流程节点的解释说明'></textarea>"+
-                   "</div>";
-
-               var p_ele="<div class='form-group'>"+
-                            "<ul class='flow_parent_ul'>"+
-                               "<li class='flow_parent_li'>"+
-                                    f_node+
-                                 "</li>"+
-                            "</ul>"+
-                         "</div>";
-
-               $(this).before(p_ele);
-
-               $("#"+node_id).on('click','.icon_add_child',function () {
-                   console.log('add child');
-
-               });
-               
-           });
-
-        }
-    }
-    $.fn.flow_level_node=function (method) {
-
-        // Method calling logic
-        if ( methods[method] ) {
-            return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-        } else if ( typeof method === 'object' || ! method ) {
-            return methods.init.apply( this, arguments );
-        } else {
-            $.error( 'Method ' +  method + ' does not exist on jQuery.file_upload' );
-        }
+        $("body").append(modal);
+        return this;
     }
 })(jQuery);
-
 
 
 //暂无数据提示插件

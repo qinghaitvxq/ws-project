@@ -16,13 +16,15 @@
 </style>
     <script>
         $(document).ready(function () {
-            $(".add-fnode").flow_level_node();
+//           $("#ctrl_addnode").flow_level_node();
         });
     </script>
 
 
 </head>
 <body>
+<!-- Large modal -->
+
 <div class="new-flow-form out_div">
 
         <div class="form-group">
@@ -81,10 +83,22 @@
         <span class="btn_topnode_add">添加一级节点</span>
     </div>
 </div>
-<div class="add-fnode">
+
+
+<div class="new-flow-form out_div" id="ctrl_addnode">
+    <div class="form-group">
+        <ul class="flow_parent_ul">
+        </ul>
+    </div>
+ <div class="add-fnode">
     <span class="glyphicon glyphicon-plus"></span>
-    <span class="btn_topnode_add">添加一级节点</span>
+    <span >添加一级节点</span>
+ </div>
 </div>
+
+
+
+
 </div>
 </body>
 </html>
