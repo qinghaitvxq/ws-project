@@ -345,46 +345,46 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     font-size: 14px;
     max-width:40%;
 }
-.flow_parent_ul li{
+
+
+/*流程节点样式*/
+.flowtree li{
+
     list-style: none;
     padding-top:10px;
-}
-
-.flow_parent_li{
-    position: relative;
 
 }
 
-.flow_parent_li ul{
-    padding-left: 30px;
-}
-/*.flow_parent_li::before{*/
-  /*content: '';*/
-    /*display:block;*/
-  /*position: absolute;*/
-  /*top:130px;*/
-  /*left:5px;*/
-  /*border-left:solid 2px rgba(0, 0, 0, 0.36);*/
-  /*border-bottom:solid 2px rgba(0, 0, 0, 0.36);*/
-  /*height:14px;*/
-  /*width:14px;*/
-
+/*.flowtree>li{*/
+    /*position: relative;*/
 /*}*/
 
-.flow_add_child::before{
-    content: '';
-    display:block;
-    position: absolute;
-    top:130px;
-    left:5px;
-    border-left:solid 2px rgba(0, 0, 0, 0.36);
-    border-bottom:solid 2px rgba(0, 0, 0, 0.36);
-    height:14px;
-    width:14px;
 
+.flowtree li ul{
+    padding-left: 30px;
+    position:relative;
 }
-.flow_parent_li .form-group{
+
+.flowtree ul::before{
+content: '';
+display:block;
+position: absolute;
+top:20px;
+left:5px;
+border-left:solid 2px rgba(0, 0, 0, 0.36);
+border-bottom:solid 2px rgba(0, 0, 0, 0.36);
+height:14px;
+width:14px;
+}
+
+.flowtree> li ul .form-control{
     margin-bottom:0;
+}
+.show{
+    display:block;
+}
+.hide{
+    display:none;
 }
 /*变动记录*/
 .flow-change-log{

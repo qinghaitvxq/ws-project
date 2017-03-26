@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
     <link rel="stylesheet" href="../dist/css/bootstrap.css">
     <link rel="stylesheet" href="../style/layout.css">
     <link rel="stylesheet" href="../style/color.css">
-    <script src="../script/helper_plugins.js"></script>
-<style>
+    <link rel="stylesheet" href="../style/weebox.css">
+
+    <script src="../script/flow_tree.js"></script>
+    <script src="../script/bgiframe.js"></script>
+    <script src="../script/weebox.js"></script>
+
+
+
+    <style>
     .out_div{
         width:50%;
         margin:20px auto;
@@ -16,7 +24,12 @@
 </style>
     <script>
         $(document).ready(function () {
-//           $("#ctrl_addnode").flow_level_node();
+         $("#flowtree").flowtree();
+
+         $("#btn_test").click(function () {
+             $.weeboxs.open("操作成功",{title:'提示',type:'alert'});
+         });
+
         });
     </script>
 
@@ -24,78 +37,67 @@
 </head>
 <body>
 <!-- Large modal -->
-
+<p>弹框测试</p>
+<input type="button"  id="btn_test" value="点我弹出框">
+<p>新增</p>
 <div class="new-flow-form out_div">
-
-        <div class="form-group">
-            <ul class="flow_parent_ul">
-                <li class="flow_parent_li">
-                    <div class="node_out_div">
-                        <div class="edit-area">
-                            <span class="glyphicon glyphicon-plus"></span>
-                            <span class="glyphicon glyphicon-trash btn-red-font"></span>
-                        </div>
-
-                           <input  class="form-control" placeholder="输入一级节点名称" >
-                           <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-
-                    </div>
-                    <ul>
-                        <li >
-                            <div class=" flow_parent_li node_out_div">
-                                <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash btn-red-font"></span></div>
-                                <input  class="form-control" placeholder="输入二级节点名称" >
-                                <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                            </div>
-                            <ul>
-                                <li>
-                                    <div class="node_out_div">
-                                        <div class="edit-area"><span class="glyphicon glyphicon-trash btn-red-font"></span></div>
-                                        <input  class="form-control" placeholder="输入三级节点名称" >
-                                        <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li  class="flow_parent_li">
-                            <div class="node_out_div">
-                                <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash btn-red-font"></span></div>
-                                <input  class="form-control" placeholder="输入二级节点名称" >
-                                <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                            </div>
-                            <ul>
-                                <li>
-                                    <div class="node_out_div">
-                                        <div class="edit-area"><span class="glyphicon glyphicon-trash btn-red-font"></span></div>
-                                        <input  class="form-control" placeholder="输入三级节点名称" >
-                                        <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    <div class="add-fnode">
-        <span class="glyphicon glyphicon-plus"></span>
-        <span class="btn_topnode_add">添加一级节点</span>
-    </div>
-</div>
-
-
-<div class="new-flow-form out_div" id="ctrl_addnode">
     <div class="form-group">
-        <ul class="flow_parent_ul">
+        <ul id="flowtree">
+
         </ul>
     </div>
- <div class="add-fnode">
-    <span class="glyphicon glyphicon-plus"></span>
-    <span >添加一级节点</span>
- </div>
 </div>
 
+<!--<p>编辑</p>-->
+
+<!--<div class="new-flow-form out_div">-->
+
+    <!--<div class="form-group">-->
+
+        <!--<ul id="flowtree" >-->
+            <!--<li >-->
+                <!--<div >-->
+                    <!--<input  class="form-control" placeholder="节点名称"  value="hehhahahe">-->
+                    <!--<textarea class="form-control" rows="3" placeholder="节点解释说明">haha</textarea>-->
+                <!--</div>-->
+                <!--<ul>-->
+                    <!--<li >-->
+                        <!--<div>-->
+                            <!--<input  class="form-control" value="test" >-->
+                            <!--<textarea class="form-control" rows="3" >test desc</textarea>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li>-->
+                                <!--<div >-->
+                                    <!--<input  class="form-control"  value="hello">-->
+                                    <!--<textarea class="form-control" rows="3" > hello desc</textarea>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<li  >-->
+                        <!--<div >-->
+
+                            <!--<input  class="form-control"  value="hi">-->
+                            <!--<textarea class="form-control" rows="3" >hi desc</textarea>-->
+                        <!--</div>-->
+                        <!--<ul>-->
+                            <!--<li>-->
+                                <!--<div >-->
+
+                                    <!--<input  class="form-control" value="keep" >-->
+                                    <!--<textarea class="form-control" rows="3" > keep going</textarea>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        <!--</ul>-->
+
+    <!--</div>-->
+
+<!--</div>-->
 
 
 
