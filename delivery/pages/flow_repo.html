@@ -186,42 +186,45 @@
                                 <label >编辑流程图(最多可添加三级节点)</label>
                             </div>
                             <div class="form-group">
-                                <ul class="flow_parent_ul">
-                                    <li class="flow_parent_li">
-                                        <div class="node_out_div">
-                                            <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
-                                            <input  class="form-control" placeholder="输入一级节点名称" >
-                                            <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                                        </div>
-                                        <ul>
-                                            <li >
-                                                <div class="node_out_div">
-                                                    <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
-                                                    <input  class="form-control" placeholder="输入二级节点名称" >
-                                                    <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                                                </div>
+                                <!--<ul class="flow_parent_ul">-->
+                                    <!--<li class="flow_parent_li">-->
+                                        <!--<div class="node_out_div">-->
+                                            <!--<div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>-->
+                                            <!--<input  class="form-control" placeholder="输入一级节点名称" >-->
+                                            <!--<textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>-->
+                                        <!--</div>-->
+                                        <!--<ul>-->
+                                            <!--<li >-->
+                                                <!--<div class="node_out_div">-->
+                                                    <!--<div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>-->
+                                                    <!--<input  class="form-control" placeholder="输入二级节点名称" >-->
+                                                    <!--<textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>-->
+                                                <!--</div>-->
 
-                                            <li  class="flow_parent_li">
-                                                <div class="node_out_div">
-                                                    <div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>
-                                                    <input  class="form-control" placeholder="输入二级节点名称" >
-                                                    <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                                                </div>
-                                                <ul>
-                                                    <li>
-                                                        <div class="node_out_div">
-                                                            <div class="edit-area"><span class="glyphicon glyphicon-trash"></span></div>
-                                                            <input  class="form-control" placeholder="输入三级节点名称" >
-                                                            <textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                            <!--<li  class="flow_parent_li">-->
+                                                <!--<div class="node_out_div">-->
+                                                    <!--<div class="edit-area"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-trash"></span></div>-->
+                                                    <!--<input  class="form-control" placeholder="输入二级节点名称" >-->
+                                                    <!--<textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>-->
+                                                <!--</div>-->
+                                                <!--<ul>-->
+                                                    <!--<li>-->
+                                                        <!--<div class="node_out_div">-->
+                                                            <!--<div class="edit-area"><span class="glyphicon glyphicon-trash"></span></div>-->
+                                                            <!--<input  class="form-control" placeholder="输入三级节点名称" >-->
+                                                            <!--<textarea class="form-control" rows="3" placeholder="请输入对该流程节点的解释说明"></textarea>-->
+                                                        <!--</div>-->
+                                                    <!--</li>-->
+                                                <!--</ul>-->
+                                            <!--</li>-->
+                                        <!--</ul>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                                <ul id="flowtree">
+
                                 </ul>
                             </div>
-                            <div class="add-fnode"><span class="glyphicon glyphicon-plus "></span><span>添加一级节点</span></div>
+                            <!--<div class="add-fnode"><span class="glyphicon glyphicon-plus "></span><span>添加一级节点</span></div>-->
                             <div class="form-group">
                                 <label >流程说明</label>
                                 <textarea class="form-control" rows="3"></textarea>
@@ -252,8 +255,10 @@
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="../scripts/modal.js"></script>
 <script src="../scripts/helper_plugins.js"></script>
+<script src="../scripts/flow_tree.js"></script>
 <script>
     $(document).ready(function () {
+        $("#flowtree").flowtree();
 
         $(".nav-bar").on("mouseenter mouseleave",">ul>li",function (e) {
             display_childmenu(e);

@@ -228,7 +228,7 @@
                     }).find('.popover-content').text(desc);
 
                     if(e.type=="mouseleave"){
-                        $('.popover').hide();
+                         $('.popover').hide();
                     }
 
              });

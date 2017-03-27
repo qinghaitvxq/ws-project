@@ -217,6 +217,7 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 }
 .edit-area{
     float:right;
+    width:50px;
 }
 .edit-area  span{
     display: inline-block;
@@ -225,10 +226,14 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     cursor:pointer;
 
 }
+.add-fnode{
+    padding: 8px;
+    margin-top: 10px;
+}
 .add-fnode span{
     cursor:pointer;
     display: inline-block;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
 }
 
 
@@ -340,34 +345,61 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     line-height: 25px;
     font-size: 14px;
     max-width:40%;
+    overflow-wrap: break-word;
 }
-.flow_parent_ul li{
+
+
+/*流程节点样式*/
+.flowtree li{
     list-style: none;
     padding-top:10px;
+    position:relative;
+}
+.flowtree .form-control{
+    margin-bottom:2px;
+    background-color:#f8fafc;
+    border: 1px solid #dce4eb;
+    border-radius: 0px;
 }
 
-.flow_parent_li{
-    position: relative;
-
+.flowtree>li{
+   margin-bottom: 25px;
 }
 
-.flow_parent_li ul{
+
+.flowtree li ul{
     padding-left: 30px;
+    position:relative;
 }
-.flow_parent_li::before{
-  content: '';
-    display:block;
-  position: absolute;
-  top:130px;
-  left:5px;
-  border-left:solid 1px gray;
-  border-bottom:solid 1px gray;
-  height:20px;
-  width:20px;
 
+/*.flowtree ul::before{*/
+/*content: '';*/
+/*display:block;*/
+/*position: absolute;*/
+/*top:20px;*/
+/*left:5px;*/
+/*border-left:solid 2px rgba(0, 0, 0, 0.36);*/
+/*border-bottom:solid 2px rgba(0, 0, 0, 0.36);*/
+/*height:14px;*/
+/*width:14px;*/
+/*}*/
+.flowtree>li li::before{
+    content: '';
+    display:block;
+    position: absolute;
+    top:20px;
+    left:-20px;
+    border-left:solid 2px rgba(0, 0, 0, 0.36);
+    border-bottom:solid 2px rgba(0, 0, 0, 0.36);
+    height:14px;
+    width:14px;
 }
-.flow_parent_li .form-group{
-    margin-bottom:0;
+
+.show{
+    display:block;
+}
+.hide{
+    display:none;
 }
 /*变动记录*/
 .flow-change-log{
@@ -499,6 +531,29 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 .management-operate{
     padding-top: 15px;
 }
+
+.modal-overlay {
+    visibility: hidden;
+    position: absolute;   /* 使用绝对定位或固定定位  */
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 1000;
+    background-color: #333;
+    opacity: 0.5;   /* 背景半透明 */
+}
+/* 模态框样式 */
+.modal-data{
+    width:300px;
+    margin: 100px auto;
+    background-color: #fff;
+    border:1px solid #000;
+    padding:15px;
+    text-align:center;
+}
+
 /*登录页颜色样式*/
 .login-title span{
     color:white;
@@ -623,4 +678,20 @@ input.placeholder{
 }
 .file_name_span{
     color:black;
+}
+.modal-content{
+    min-width:650px;
+}
+.popover-content {
+    line-height: 25px;
+    color: gray;
+    font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+
+.ref_doc_content .popover{
+    min-width: 50%;
+    max-height: 300px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
 }

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../style/easyTree.css">
     <link rel="stylesheet" href="../style/fileicon.css">
     <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
-    <script src="../scripts/global.js"></script>
+    <!--<script src="../scripts/global.js"></script>-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -118,31 +118,72 @@
                 <th>PK发起人</th>
                 <th>发起时间</th>
                 <th>状态</th>
+                <th>PK建议</th>
                 </thead>
                 <tbody>
+
                 <tr>
                     <td>竞品公司调研</td>
                     <td>沈奕娜</td>
                     <td>2017-03-17</td>
                     <td>待审核</td>
+                    <td>
+                        <a href="#" data-toggle="popover" data-placement="left" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?And here's some amazing content. It's very engaging. Right?And here's some amazing content. It's very engaging. Right?And here's some amazing content. It's very engaging. Right?">查看详细</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>竞品公司调研</td>
                     <td>沈奕娜</td>
                     <td>2017-03-17</td>
                     <td>待审核</td>
+                    <td>
+                        <a href="#" data-toggle="popover"  data-placement="left" title="PK建议" data-content="我步入丛林
+                           因为我希望生活有意义
+                           我希望活得深刻
+                           吸取生命中所有的精华
+                           把非生命的一切都击溃
+                           以免当我生命终结
+                           我发现自己从没有活过
+                           我们读诗写诗，非为它的灵巧．我们读诗写诗，因为我们是人类的一员．而人类充满了热情．
+                           医药，法律，商业，工程，这些都是高贵的理想，并且是维生的必需条件．
+                           但是诗，美，浪漫，爱，这些才是我们生存的原因我步入丛林
+                           因为我希望生活有意义
+                           我希望活得深刻
+                           吸取生命中所有的精华
+                           把非生命的一切都击溃
+                           以免当我生命终结
+                           我发现自己从没有活过
+                           我们读诗写诗，非为它的灵巧．我们读诗写诗，因为我们是人类的一员．而人类充满了热情．
+                           医药，法律，商业，工程，这些都是高贵的理想，并且是维生的必需条件．
+                           但是诗，美，浪漫，爱，这些才是我们生存的原因我步入丛林
+                           因为我希望生活有意义
+                           我希望活得深刻
+                           吸取生命中所有的精华
+                           把非生命的一切都击溃
+                           以免当我生命终结
+                           我发现自己从没有活过
+                           我们读诗写诗，非为它的灵巧．我们读诗写诗，因为我们是人类的一员．而人类充满了热情．
+                           医药，法律，商业，工程，这些都是高贵的理想，并且是维生的必需条件．
+                           但是诗，美，浪漫，爱，这些才是我们生存的原因我步入丛林
+                           因为我希望生活有意义
+                           我希望活得深刻
+                           吸取生命中所有的精华
+                           把非生命的一切都击溃
+                           以免当我生命终结
+                           我发现自己从没有活过
+                           我们读诗写诗，非为它的灵巧．我们读诗写诗，因为我们是人类的一员．而人类充满了热情．
+                           医药，法律，商业，工程，这些都是高贵的理想，并且是维生的必需条件．
+                           但是诗，美，浪漫，爱，这些才是我们生存的原因">查看详细</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>竞品公司调研</td>
                     <td>沈奕娜</td>
                     <td>2017-03-17</td>
                     <td>待审核</td>
-                </tr>
-                <tr>
-                    <td>竞品公司调研</td>
-                    <td>沈奕娜</td>
-                    <td>2017-03-17</td>
-                    <td>待审核</td>
+                    <td>
+                        <a href="#" data-toggle="popover"  data-placement="left" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">查看详细</a>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -160,6 +201,8 @@
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="../scripts/modal.js"></script>
+<script src="../scripts/tooltip.js"></script>
+<script src="../scripts/popover.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -167,12 +210,13 @@
         $(".userInfo-li").on("click",function (e) {
             display_childmenu(e);
         });
+//
+//        $('.easy-tree').EasyTree({
+//            showtips:true
+//        });
 
-        $('.easy-tree').EasyTree({
-            showtips:true
-        });
-
-        $('[data-toggle="popover"]').popover()
+        $('[data-toggle="popover"]').popover();
+        $('[data-toggle="tooltip"]').tooltip();
     });
     function display_childmenu(target) {
         var menu_ul=$(target.currentTarget).find('ul');
