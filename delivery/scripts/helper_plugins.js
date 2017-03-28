@@ -2,6 +2,49 @@
  * Created by caipf on 2017/3/16.
  */
 
+/*弹框显示元素内部HTML*/
+(function ($) {
+    $.fn.popover_innerHTML=function (options) {
+        var settings=$.extend({
+            "target_ele_class":$(this).attr("class")
+        },options);
+        $(this).on("mouseenter mouseleave",function (e) {
+            if(e.type=="mouseenter") {
+                var popover = "<div class='popover fade left in tree-info-pover gray-font'"
+                    + "style='display: none;min-height: 60px;width:450px'>"
+                    + "<div class='arrow' style='top: 25px'></div><h3 class='popover-title' style='display: none;'></h3>"
+                    + "<div class='popover-content'></div>"
+                    + "</div>";
+
+                $('body').append($(popover));
+
+                var desc = $(this).parent().children('.'+settings.target_ele_class).html();
+                if (!desc || desc.length <= 0) {
+                    desc = "暂无信息";
+                }
+                var cur_ele_pos = $(this).offset();
+                var left = cur_ele_pos.left;
+                var top = cur_ele_pos.top;
+                var width = $(".popover").width();
+                var height = $(this).height();
+
+                $('.popover').css({
+                    "position": "absolute",
+                    "display": "block",
+                    "left":left-460+"px",
+                    "top": top - 6 + "px",
+                }).find('.popover-content').html(desc);
+            }
+            if(e.type=="mouseleave"){
+                  $('.popover').remove();
+            }
+        });
+
+        return this;
+    }
+})(jQuery);
+
+
 //暂无数据提示插件
 /*
 $('父容器').no_data_tips({
@@ -130,3 +173,4 @@ $('父容器').no_data_tips({
         }
     }
 })(jQuery);
+

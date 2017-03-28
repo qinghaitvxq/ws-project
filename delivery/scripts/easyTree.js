@@ -207,6 +207,7 @@
                            +"<div class='arrow' style='top: 25px'></div><h3 class='popover-title' style='display: none;'></h3>"
                            +"<div class='popover-content'></div>"
                            +"</div>";
+
                 $('body').append($(popover));
 
                 $(easyTree).delegate('li.parent_li  span', 'mouseenter mouseleave', function (e) {
