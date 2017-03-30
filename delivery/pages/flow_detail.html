@@ -94,6 +94,9 @@
                 <div>
                     <p class="tree-hint btn-red-font"><span class="glyphicon glyphicon-eye-open"></span><span>鼠标移动至节点上可查看详细描述</span></p>
                 </div>
+                <!--<div class="btn-green-font collapseall">-->
+                    <!--<span class="glyphicon glyphicon-chevron-up"></span><span>收起全部</span>-->
+                <!--</div>-->
                 <div class="easy-tree">
                     <ul>
                         <li desc=" 我步入丛林
@@ -440,7 +443,8 @@
         });
 
         $('.easy-tree').EasyTree({
-            showtips:true
+            showtips:true,
+            collapseAll:true
         });
 
         $('[data-toggle="popover"]').popover()

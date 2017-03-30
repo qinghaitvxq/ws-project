@@ -26,7 +26,8 @@
                 editTip: '编辑',
                 addTip: '添加',
                 deleteTip: '删除',
-                cancelButtonLabel: '取消'
+                cancelButtonLabel: '取消',
+                collapseAll:false
             }
         };
 
@@ -46,14 +47,14 @@
                     $(children).remove();
                     text = $(this).text();
                     $(this).html('<span><span></span><a href="javascript: void(0);"></a> </span>');
-                    // $(this).find(' > span > span').addClass('');
+                     $(this).find(' > span > span').addClass('glyphicon glyphicon-minus');
                     $(this).find(' > span > a').text(text);
                     $(this).append(children);
                 }
                 else {
                     text = $(this).text();
                     $(this).html('<span><span></span><a href="javascript: void(0);"></a> </span>');
-                    // $(this).find(' > span > span').addClass('glyphicon-file');
+                     // $(this).find(' > span > span').addClass('glyphicon glyphicon-minus');
                     $(this).find(' > span > a').text(text);
                 }
             });
@@ -89,7 +90,7 @@
                             if ($(selected).hasClass('parent_li')) {
                                 $(selected).find(' > ul').append(item);
                             } else {
-                                // $(selected).addClass('parent_li').find(' > span > span').addClass('').removeClass('glyphicon-file');
+                                 $(selected).addClass('parent_li').find(' > span > span').addClass('').removeClass('glyphicon-file');
                                 $(selected).append($('<ul></ul>')).find(' > ul').append(item);
                             }
                         }
@@ -210,11 +211,13 @@
 
                 $('body').append($(popover));
 
-                $(easyTree).delegate('li.parent_li  span', 'mouseenter mouseleave', function (e) {
+                $(easyTree).delegate("li.parent_li span:not('.glyphicon')", 'mouseenter mouseleave', function (e) {
+                    console.log('hello?');
                     var desc=$(this).parent('li').attr('desc');
                     if(!desc || desc.length<=0){
                         desc="暂无描述信息";
                     }
+
                     var cur_ele_pos=$(this).offset();
                     var left=cur_ele_pos.left;
                     var top=cur_ele_pos.top;
@@ -241,17 +244,61 @@
                     children.hide('fast');
                     $(this).attr('title', options.i18n.expandTip)
                         .find(' > span.glyphicon')
-                        .addClass('glyphicon-folder-close')
-                        .removeClass('glyphicon-folder-open');
+                        .addClass('glyphicon-plus')
+                        .removeClass('glyphicon-minus');
                 } else {
                     children.show('fast');
                     $(this).attr('title', options.i18n.collapseTip)
                         .find(' > span.glyphicon')
-                        .addClass('glyphicon-folder-open')
-                        .removeClass('glyphicon-folder-close');
+                        .addClass('glyphicon-minus')
+                        .removeClass('glyphicon-plus');
                 }
                 e.stopPropagation();
             });
+
+            // collapse all and expand all add by cpf
+            if(options.collapseAll){
+
+                var ele_html="<div class='btn-red-font' id='collapseall'>"+
+                                 "<span class='glyphicon glyphicon-chevron-up'></span>&nbsp;<span>收起全部</span>"+
+                             "</div>";
+
+                $(easyTree).before(ele_html);
+
+                $(easyTree).parent().on("click","#collapseall",function (e) {
+                        //var children = $(easyTree).parent('li.parent_li').find(' > ul > li');
+                        var collapse_ele=$(this);
+                        var f_li=$(easyTree).find('li.parent_li');
+                        var children = f_li.find(' > ul > li ');
+                        var collapse=collapse_ele.find(".glyphicon-chevron-up").length>0?true:false;
+                        if(collapse){
+                            //要收起全部
+                            collapse_ele.find(".glyphicon")
+                                        .addClass('glyphicon-chevron-down')
+                                        .removeClass('glyphicon-chevron-up')
+                                        .siblings('span')
+                                        .text('展开全部');
+                            f_li.find('.glyphicon')
+                                .addClass("glyphicon-plus")
+                                .removeClass("glyphicon-minus");
+                            f_li.find(' > ul > li')
+                                .hide('fast');
+
+                        }else{
+                            //要展开全部
+                            collapse_ele.find(".glyphicon")
+                                        .addClass('glyphicon-chevron-up')
+                                        .removeClass('glyphicon-chevron-down')
+                                        .siblings('span')
+                                        .text('收起全部');
+                            f_li.find('.glyphicon')
+                                .addClass("glyphicon-minus")
+                                .removeClass("glyphicon-plus");
+                            f_li.find(' > ul > li')
+                                .show('fast');
+                        }
+                });
+            }
 
             // selectable, only single select
             if (options.selectable) {

@@ -17,7 +17,7 @@ function resetFields(whichform){
        }
        element.onblur=function () {
            if(this.value==""){
-               this.className='placeholder';
+               this.className+=' placeholder';
                this.value=this.placeholder || this.getAttribute('placeholder');
            }
        }
