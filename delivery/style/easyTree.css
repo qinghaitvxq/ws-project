@@ -20,14 +20,14 @@
     position: relative
 }
 
-.easy-tree li::after,.easy-tree li::before {
+.easy-tree li:after,.easy-tree li:before {
     content: '';
     left: -30px;
     position: absolute;
     right: auto
 }
 
-.easy-tree li::before {
+.easy-tree li:before {
     border-left: 1px solid gray;
     bottom: 50px;
     height: 100%;
@@ -35,7 +35,7 @@
     width: 1px
 }
 
-.easy-tree li::after {
+.easy-tree li:after {
     border-top: 1px solid gray;
     height: 20px;
     top: 29px;
@@ -58,11 +58,11 @@
     padding-left: 40px;
 }
 
-.easy-tree>ul>li::after,.easy-tree>ul>li::before {
+.easy-tree>ul>li:after,.easy-tree>ul>li:before {
     border: 0
 }
 
-.easy-tree li:last-child::before {
+.easy-tree li:last-child:before {
     height: 30px
 }
 

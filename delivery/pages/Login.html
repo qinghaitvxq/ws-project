@@ -56,11 +56,18 @@
                     </div>
                     <div class="forget-psw">
                         <a  href="#">忘记密码？</a>
+                        <!--<span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span>-->
                     </div>
-                    <div>
-                        <input type="button" class="btn  login-btn "  value="登录">
-                    </div>
+
                 </form>
+
+
+                <form action="flow_repo.html" method="post">
+                    <p>First name: <input type="text" name="fname" /></p>
+                    <p>Last name: <input type="text" name="lname" /></p>
+                    <input type="submit" value="Submit" />
+                </form>
+
 
             </div>
         </div>
@@ -77,6 +84,14 @@
         $(".login-btn").click(function () {
             window.location.href="flow_repo.html";
         });
+
+        $('form').submit(function () {
+        alert('hahah');
+            return true;
+        });
+
+
+
     });
 </script>
 </html>

@@ -9,9 +9,14 @@ html,body{
 body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
 
 /*登录页布局样式*/
-
+table th,
+table td{
+    text-align: center;
+}
 .login-body{
     background-image: url(../images/login.jpg);
+    background-size: 100% ;
+    background-repeat: no-repeat;
 }
 .login-title{
     width:100%;
@@ -155,7 +160,7 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     width: 0;
     height: 0;
     margin-left: 2px;
-    border-top: 5px dashed;
+    border-top: 5px solid;
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
     vertical-align: middle;
@@ -430,6 +435,7 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 .file_name_div{
     position:relative;
     min-width:150px;
+    text-align: left;
 }
 .file_name_div .file_name_span{
     display: inline-block;
@@ -708,4 +714,6 @@ input.placeholder{
 #collapseall{
     padding-left: 20px;
     cursor:pointer;
-}
+}#div_file_tips{
+    display:none;
+ }

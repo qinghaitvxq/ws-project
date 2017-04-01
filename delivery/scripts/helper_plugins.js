@@ -2,6 +2,11 @@
  * Created by caipf on 2017/3/16.
  */
 
+function  isIELower(ver){
+    var b = document.createElement('b');
+    b.innerHTML = '<!--[if lt IE ' + ver + ']>1<![endif]-->';
+    return b.innerHTML =="1";
+}
 /*弹框显示元素内部HTML*/
 (function ($) {
     $.fn.popover_innerHTML=function (options) {
@@ -82,10 +87,13 @@ $('父容器').no_data_tips({
     var methods={
 
         init:function (options) {
+
+            if(isIELower(10)){
+                return;
+            }
+
             this.data('files',new Array());
-
             var _this=this;
-
             var a_element="<a href='#' class='btn btn-default a-upload' ></a>",
                 span_element="<span>添加附件</span>",
                 div_element="<div class='file_upload_area gray-font'></div>",
@@ -97,9 +105,7 @@ $('父容器').no_data_tips({
 
             //添加附件事件触发
             this.on('change',function () {
-
                 var filelist=this.files;
-
                 if(filelist.length==0) return;
                 for(var i=0;i<filelist.length;i++){
                     var filename=filelist[i].name;
