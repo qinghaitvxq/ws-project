@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>参考文件</title>
+
+    <!-- Bootstrap -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="../style/bootstrap.css">
+    <!--<link rel="stylesheet" href="http://zgs225.github.io/easy-tree/dist/css/easyTree.min.css">-->
+    <!--<link rel="stylesheet" href="../style/main-min.css">-->
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/easyTree.css">
+    <link rel="stylesheet" href="../style/fileicon.css">
+    <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
+    <!--<script src="../scripts/global.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body class="flow-repo-body">
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <ul class="nav-ws">
+                <li  role="presentation"><a href="#"  class="active">流程库</a></li>
+                <li  role="presentation" ><a href="#">项目</a></li>
+                <li  role="presentation" ><a href="#">我的</a></li>
+                <li  role="presentation" ><a href="#">创建项目</a></li>
+                <li  role="presentation" ><a href="#">管理面板</a></li>
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <ul class="userInfo">
+                <li  role="presentation"><a href="#" >使用说明</a></li>
+                <!--<li  role="presentation" ><a href="#">搜索</a></li>-->
+                <!--<li  role="presentation" ><a href="#">个人设置</a></li>-->
+                <li  role="presentation" class="userInfo-li" >
+                    <a href="#">卡卡西
+                        <span class="down-icon" ></span>
+                    </a>
+
+                    <ul class="userInfo-dropdown-ul" >
+                        <li>个人设置</li>
+                        <li>退出</li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="row navigator">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 nav-bar-detail">
+
+            <div class="flow-info gray-font">
+                <span class="glyphicon glyphicon-paperclip"></span>
+                <span>产品类</span>
+                <span>-</span>
+                <span>市场调研</span>
+                <span>-</span>
+                <span>竞争分析工作流程</span>
+            </div>
+            <div class="flow-oper-btns">
+                <button class="btn red-btn new-flow-icon"> <span class="glyphicon glyphicon-plus"></span><span>创建新流程</span></button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row main-content flow-detail-content">
+        <div class="col-md-2">
+            <ul class="detail-slider-menu btn-red-font">
+                <li><span>流程</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+                <li><span>变动记录</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+                <li><span>参考文件</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+                <li><span>项目</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+                <li><span>管理</span><span class="glyphicon glyphicon-circle-arrow-right btn-green-font"></span></li>
+            </ul>
+        </div>
+        <div class="col-md-8 ref_doc_content">
+            <form class="form-horizontal">
+                <div class="form-group management-operate" >
+                    <label class="col-sm-2 control-label" >审核流程</label>
+                    <div class="col-sm-4">
+                        <select class="form-control">
+                            <option>全部</option>
+                            <option>待审批流程</option>
+                            <option>已审批流程</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <select class="form-control ">
+                            <option>按时间排序</option>
+                            <option>按项目名称排序</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn green-btn">搜索</button>
+
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-striped">
+                <thead>
+                <th>流程名称</th>
+                <th>PK发起人</th>
+                <th>发起时间</th>
+                <th>状态</th>
+                <th>PK建议</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>竞品公司调研</td>
+                    <td>沈奕娜</td>
+                    <td>2017-03-17</td>
+                    <td>待审核</td>
+                    <td>
+                        <div class="pkdiv" style="position:relative">
+                            <a class="pklink" style="position:relative" href="#">查看详细</a>
+                            <p  class="pkcontent" style="display:none">
+                                hello world!
+                                不要温和地走进那个良夜
+                                白昼将尽，暮年仍应燃烧咆哮
+                                怒斥吧，怒斥光的消逝
+                                虽然在白昼尽头，智者自知该踏上夜途
+                                因为言语未曾迸发出电光，他们
+                                不要温和地走进那个良夜
+                                好人，当最后一浪过去，高呼着他们脆弱的善行
+                                本来也许可以在绿湾上快意地舞蹈
+                                所以，他们怒斥，怒斥光的消逝
+                                狂人抓住稍纵即逝的阳光，为之歌唱
+                                并意识到，太迟了，他们过去总为时光伤逝
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>竞品公司调研</td>
+                    <td>沈奕娜</td>
+                    <td>2017-03-17</td>
+                    <td>待审核</td>
+                    <td>
+                        <div class="pkdiv" >
+                            <a class="pklink" href="#">查看详细</a>
+                            <p  class="pkcontent">
+                                hello world!
+                                <br/>
+                                <span>hhh</span>
+                                again
+
+                            </p>
+                        </div>
+                    </td>
+                </tr>  <tr>
+                    <td>竞品公司调研</td>
+                    <td>沈奕娜</td>
+                    <td>2017-03-17</td>
+                    <td>待审核</td>
+                    <td>
+                        <div class="pkdiv" style="position:relative">
+                            <a class="pklink" style="position:relative" href="#">查看详细</a>
+                            <p  class="pkcontent" style="display:none">
+                                1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class=" row flow-repo-footer">
+        <span>如需帮助，请拨打110....</span>
+    </div>
+
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../scripts/modal.js"></script>
+<script src="../scripts/tooltip.js"></script>
+<script src="../scripts/popover.js"></script>
+<script src="../scripts/helper_plugins.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $(".userInfo-li").on("click",function (e) {
+            display_childmenu(e);
+        });
+//
+//        $('.easy-tree').EasyTree({
+//            showtips:true
+//        });
+
+        $('[data-toggle="popover"]').popover();
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $(".pklink").popover_innerHTML({
+           target_ele_class:"pkcontent"
+        });
+    });
+    function display_childmenu(target) {
+        var menu_ul=$(target.currentTarget).find('ul');
+        if(!menu_ul||menu_ul.length==0 ) return;
+        if(target.type=="mouseenter"){
+            menu_ul.show();
+        }
+        if(target.type=="mouseleave"){
+            menu_ul.hide();
+        }
+        if(target.type=="click"){
+            var isVilible=menu_ul.is(":visible");
+            if(isVilible){
+                menu_ul.hide();
+            }
+            else {
+                menu_ul.show();
+            }
+        }
+    }
+</script>
+</html>

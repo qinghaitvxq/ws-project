@@ -74,6 +74,12 @@ gulp.task('html',function () {
         .pipe(gulp.dest('delivery/pages'));
 });
 
+gulp.task('less',function () {
+    return gulp.src('./delivery/less/*.less')
+        .pipe(less())
+        .pipe(gulp.dest('./delivery/style'));
+});
+
 gulp.task('default',[],function (){
     gulp.start('css','js','image','html');
 });

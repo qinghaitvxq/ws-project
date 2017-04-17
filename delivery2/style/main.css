@@ -1,0 +1,719 @@
+/*全局样式*/
+*{
+    padding:0;
+    margin:0;
+}
+html,body{
+    height:100%;
+}
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+
+/*登录页布局样式*/
+table th,
+table td{
+    text-align: center;
+}
+.login-body{
+    background-image: url(../images/login.jpg);
+    background-size: 100% ;
+    background-repeat: no-repeat;
+}
+.login-title{
+    width:100%;
+    float:right;
+    margin-right: 10%;
+    margin-top: 15%;
+    text-align: center;
+}
+.login-title span{
+    font-size: 28px;
+}
+.login-div{
+    width:100%;
+    float: right;
+    margin-right: 10%;
+    margin-left:auto;
+    margin-top: 50px;
+    border:solid 1px gray;
+    border-radius: 6px;
+    background-color: white;
+    padding:70px 50px 80px 50px;
+    box-shadow: 4px 4px 8px #333333;
+}
+.forget-psw{
+    overflow: auto;
+}
+.forget-psw a{
+    display:inline-block;
+    float: right;
+}
+.login-btn{
+    width:100%;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/*流程库布局样式*/
+
+.nav-ws,
+.userInfo{
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style:none;
+}
+.nav-ws>li,
+.userInfo>li{
+    positive:relative;
+    display:block;
+    padding: 16px 0;
+
+}
+.nav-ws li a
+{
+    position:relative;
+    display:block;
+    padding:3px 20px;
+    border-radius: 5px;
+    font-size:16px;
+}
+.userInfo li a{
+    position:relative;
+    display:block;
+    padding:3px 10px;
+    font-size:16px;
+ }
+
+.flow-repo-body .header .nav-ws>li,
+.flow-repo-body .header .userInfo>li{
+    float: left;
+    list-style: none;
+}
+
+.flow-repo-body .nav-bar>ul{
+    width:100%;
+    margin:0;
+}
+
+.flow-repo-body .nav-bar>ul>li{
+    position:relative;
+    float: left;
+    list-style: none;
+    padding: 15px 25px;
+
+}
+
+.flow-repo-body .nav-bar>ul>li a{
+    color:gray;
+    font-size: 16px;
+}
+.dropdown-ul{
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:1000;
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 2px 8px #333333;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    min-width:150px;
+    display:none;
+
+}
+.userInfo-dropdown-ul{
+    position:absolute;
+    top:100%;
+    right:20%;
+    z-index:1000;
+    list-style: none;
+    margin-top: 4px;
+    padding: 10px;
+    box-shadow: 0 3px 12px rgba(27,31,35,0.15);
+    border-radius: 5px;
+    min-width:120px;
+    display:none;
+}
+.userInfo-dropdown-ul>li{
+    padding: 5px;
+     cursor:pointer;
+
+}
+.userInfo-dropdown-ul::before{
+    content:"";
+    display:inline-block;
+    position:absolute;
+    border:8px solid transparent;
+    border-bottom-color:white;;
+    top:-16px;
+    right:9px;
+    left:auto;
+}
+.dropdown-ul>li{
+    line-height:35px;
+    font-size: 1em;
+    padding-left: 15px;
+}
+
+.down-icon{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    vertical-align: middle;
+}
+
+.new-flow-div{
+    position: relative;
+    height: 52px;
+
+}
+.new-flow{
+    width:150px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    float:right;
+}
+.new-flow span,
+.new-flow-icon span,
+.flow-info span,
+.btn-send-comments span{
+    display: inline-block;
+    margin-left: 5px;
+}
+.detail-slider-menu span{
+    display: inline-block;
+    margin-left: 8px;
+    cursor:pointer;
+}
+.comment-info span {
+    display: inline-block;
+    margin-left: 10px;
+
+}
+
+
+.new-flow-form{
+    padding-left:35px;
+    padding-right: 20px;
+
+}
+.new-flow-form .form-control{
+  width:90%;
+
+}
+.edit-area{
+    float:right;
+    width:50px;
+}
+.edit-area  span{
+    display: inline-block;
+    padding-left:8px;
+    padding-top: 10px;
+    cursor:pointer;
+
+}
+.add-fnode{
+    padding: 8px;
+    margin-top: 10px;
+}
+.add-fnode span{
+    cursor:pointer;
+    display: inline-block;
+    /*padding-bottom: 10px;*/
+}
+
+
+/*流程展示页*/
+
+.flow-detail-content{
+    padding-top:25px ;
+    padding-bottom: 25px;
+}
+.nav-bar-detail div{
+    line-height: 60px;
+    width:30%;
+}
+.flow-info{
+    float: left;
+}
+.flow-oper-btns{
+    float:right;
+}
+.detail-slider-menu{
+    list-style: none;
+    margin-right: 20%;
+    text-align: right;
+}
+.detail-slider-menu>li{
+   line-height: 35px;
+    font-size: 14px;
+  font-weight: bold;
+}
+.flow-tree{
+   min-height: 300px;
+
+}
+.flow-description {
+   margin-top:40px;
+    margin-bottom:40px;
+
+}
+.flow-description p{
+    line-height:28px;
+
+}
+.flow-description h4{
+    font-size: 17px;
+}
+.btn-send-comments{
+    display: inline-block;
+    float:right;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.flow-comments{
+    margin-top:70px;
+    clear:both;
+
+}
+.flow-comments ul,
+.file_list_ul,
+.none_style_ul
+{
+    list-style: none;
+}
+.flow-comments>ul li{
+  margin-top: 12px;
+}
+.file_list_ul li{
+    line-height: 25px;
+}
+.comment-content{
+    padding:18px 16px;
+    border-radius: 5px;
+    box-shadow:0 3px 1px rgb(228,228,230) ;
+    line-height: 25px;
+}
+.reply-content{
+    margin-left: 6%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.font-weight-bold{
+    font-weight: bold;
+}
+.btn-reply{
+    cursor:pointer;
+}
+.flow-tree{
+    padding-left:20px;
+    padding-top:20px;
+}
+.tree-hint,
+.comment-replay-btn
+{
+     margin-right: 20px;
+    text-align: right;
+}
+.tree-hint span
+{
+    display: inline-block;
+    margin-left: 5px;
+}
+.comment-replay-btn span{
+    display:inline-block;
+    margin-left: 8px;
+    cursor: pointer;
+}
+.tree-info-pover{
+    padding: 14px;
+    line-height: 25px;
+    font-size: 14px;
+    max-width:40%;
+    overflow-wrap: break-word;
+}
+
+
+/*流程节点样式*/
+.flowtree li{
+    list-style: none;
+    padding-top:10px;
+    position:relative;
+}
+.flowtree .form-control{
+    margin-bottom:2px;
+    background-color:#f8fafc;
+    border: 1px solid #dce4eb;
+    border-radius: 0px;
+}
+
+.flowtree>li{
+   margin-bottom: 25px;
+}
+
+
+.flowtree li ul{
+    padding-left: 30px;
+    position:relative;
+}
+.flowtree>li li::before{
+    content: '';
+    display:block;
+    position: absolute;
+    top:20px;
+    left:-20px;
+    border-left:solid 2px rgba(0, 0, 0, 0.36);
+    border-bottom:solid 2px rgba(0, 0, 0, 0.36);
+    height:14px;
+    width:14px;
+}
+
+.show{
+    display:block;
+}
+.hide{
+    display:none;
+}
+/*变动记录*/
+
+.flow-change-log>ul{
+    list-style: none;
+}
+
+.flow-change-log>ul>li>ul{
+    list-style-type: decimal;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+.flow-change-log>ul>li>ul>li{
+   line-height: 22px;
+}
+.flow-change-log>ul>li::after{
+    content: '';
+    display: block;
+    width:100%;
+    margin-top:10px;
+    margin-bottom: 20px;
+    border-bottom: solid 2px rgba(206,206,206,0.62);
+    clear: both;
+}
+
+.flow-change-log>ul>li span{
+    display:inline-block;
+    margin-right:40px;
+}
+.flow-change-log>ul>li a{
+    display:inline-block;
+    float: right;
+    margin-bottom: 3px;
+}
+.flow-name-span{
+    font-size: medium;
+    font-weight: bold;
+
+}
+
+.upload-btn-div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.upload-btn.upload-btn{
+    width:110px;
+    margin-left: 10px;
+}
+.file-table > tbody > tr > td{
+    vertical-align: middle;
+}
+.file_name_div{
+    position:relative;
+    min-width:150px;
+    text-align: left;
+}
+.file_name_div .file_name_span{
+    display: inline-block;
+    position: absolute;
+    top:50%;
+    -webkit-transform:translateY(-50%);
+            transform:translateY(-50%);
+    margin-left: 6px;
+}
+.pointer_span{
+    cursor: pointer;
+}
+
+
+.a-upload {
+    padding: 8px 25px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    /*background: #fafafa;*/
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+.file_upload_area>ul>li{
+    line-height: 25px;
+}
+.file_upload_area>ul>li span{
+    display:inline-block;
+    margin-right: 8px;
+}
+
+.no_data{
+ width:50%;
+ padding:30px;
+ position: absolute;
+ top:50%;
+ left:50%;
+ -webkit-transform: translate(-50%,-50%);
+         transform: translate(-50%,-50%);
+ font-size: 2em;
+ text-align: center;
+ color:gray;
+
+}
+.management-operate{
+    padding-top: 15px;
+}
+
+.modal-overlay {
+    visibility: hidden;
+    position: absolute;   /* 使用绝对定位或固定定位  */
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 1000;
+    background-color: #333;
+    opacity: 0.5;   /* 背景半透明 */
+}
+/* 模态框样式 */
+.modal-data{
+    width:300px;
+    margin: 100px auto;
+    background-color: #fff;
+    border:1px solid #000;
+    padding:15px;
+    text-align:center;
+}
+
+/*登录页颜色样式*/
+.login-title span{
+    color:white;
+}
+.login-btn{
+   background-color:rgb(118,199,193);
+    border-color:rgb(118,199,193);
+    color:white;
+}
+.error-info{
+    color:red;
+}
+.error-focus{
+    border-color:red;
+}
+input.placeholder{
+    color:gray;
+}
+
+/*流程库颜色样式*/
+.flow-repo-body{
+    background-color:rgb(243,243,243);
+}
+.flow-repo-body .header,
+.flow-repo-footer{
+    background-color: rgb(118,199,193);
+}
+.flow-repo-body .navigator{
+    background-color: rgb(238,238,238);
+}
+
+.nav-ws li a:hover,
+.nav-ws li a:focus,
+.nav-ws .active
+{
+    background-color:rgb(97,162,158) ;
+    box-shadow:1px 2px 3px rgb(82,139,133) ;
+    text-decoration: none;
+}
+.userInfo li a:hover,
+.userInfo li a:focus,
+.userInfo .active{
+    text-decoration: none;
+}
+.nav-ws li a,
+.userInfo li a{
+    color:white;
+}
+
+.comment-content{
+    background-color:rgb(248,248,250);
+}
+.dropdown-ul{
+    background-color: rgb(238,238,238);
+}
+.userInfo-dropdown-ul,
+.flow-repo-content,
+.flow-tree{
+  /*background-color: rgb(238,238,238);*/
+    background-color:white;
+}
+
+.dropdown-ul>li,
+.userInfo-dropdown-ul>li{
+    color:gray;
+}
+.dropdown-ul>li:hover{
+    background-color:white;
+    cursor:pointer;
+}
+.new-flow,
+.red-btn
+{
+    background-color: rgb(229,112,105);
+    color:white;
+}
+
+.green-btn{
+    background-color: rgb(118,199,193);
+    color:white;
+}
+.flow-repo-footer span{
+   color:gray;
+}
+.add-fnode span{
+    color:#159ede;
+}
+.gray-font{
+    color:gray;
+    /*color:rgb(179,183,184);*/
+}
+.btn-red-font{
+    color:rgb(229,112,105);
+}
+.btn-green-font{
+    color:rgb(118,199,193);
+}
+.focus-black-font{
+    color: rgb(94, 111, 108);
+    font-weight: bold;
+}
+/*流程展示页*/
+
+/*变动记录*/
+.flow-change-log{
+ color: gray;
+  background-color: white;
+}
+.flow-name-span{
+    color: rgba(0, 0, 0, 0.6)
+}
+.ref_doc_content{
+    background-color: white;
+}
+/*文件上传*/
+.file-table thead{
+    background-color: #f9f9f9;
+}
+.file_name_span{
+    color:black;
+}
+.modal-content{
+    min-width:650px;
+}
+.popover-content {
+    line-height: 25px;
+    color: gray;
+    font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+
+.ref_doc_content .popover{
+    min-width: 50%;
+    max-height: 300px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+
+/*页脚自适应*/
+.container-fluid{
+    min-height: 100%;
+    height: auto !important;
+    height:100%;
+    position: relative;
+}
+
+.main-content{
+    height:100%;
+    min-height:100%;
+    padding-bottom: 50px;
+}
+.flow-repo-content{
+    margin-top:35px;
+
+
+}
+.flow-change-log{
+    padding: 25px;
+}
+.ref_doc_content,
+.flow-repo-content,
+.flow-change-log{
+    min-height:60vh;
+    margin-bottom:35px;
+}
+.flow-repo-footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    clear:both;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 50px;
+}
+.pkcontent{
+    display:none;
+}
+.pkdiv{
+    position: relative;
+}
+#collapseall{
+    padding-left: 20px;
+    cursor:pointer;
+}#div_file_tips{
+    display:none;
+ }

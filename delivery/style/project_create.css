@@ -1,0 +1,16 @@
+.mine_task_content {
+  background-color: white;
+  margin-top: 20px;
+  padding:10px;
+}
+.mine_task_content .table td {
+  text-align: left;
+  vertical-align:middle;
+  line-height: 24px;
+}
+.mine_task_content ul{
+  list-style: none;
+}
+.pt80_width{
+     width:80%;
+   }
