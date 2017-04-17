@@ -91,23 +91,28 @@
             container_div.on("dragover",function (e) {
                 e.preventDefault();
             }).on('dragenter',function (e) {
-                console.log('1');
-                console.log(e.target);
-                var target=$(e.target);
 
+//                var target=$(e.target);
+//                this.style.backgroundColor ='#b3b2b2';
 
-                if(target.hasClass('task_container')){
-                    e.target.style.backgroundColor ='blue';
-                }
+//                if(target.hasClass('task_container')){
+//                    e.target.style.backgroundColor ='blue';
+//                }
 
             }).on('dragleave',function (e) {
-                e.target.style.backgroundColor ='white';
+                //this.style.backgroundColor = 'rgba(242, 242, 242, 1)';
+
             }).on('drop',function (e) {
                 // 把拖拽事件中的传递数据取出并插入到目标元素中
                 var data = e.originalEvent.dataTransfer.getData("data");
-                $(this).find('>p').after(document.getElementById(data));
+                if($(this).find('.btn_add_task').length>0){
+                    $(this).find('.btn_add_task').after(document.getElementById(data));
+                }else{
+                    $(this).find('>p').after(document.getElementById(data));
+                }
+
                 // 目标元素样式改变
-                e.target.style.backgroundColor = 'rgba(242, 242, 242, 1)';
+                this.style.backgroundColor = 'rgba(242, 242, 242, 1)';
             });
         });
     </script>
