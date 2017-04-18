@@ -73,7 +73,12 @@
                 <li  role="presentation"><a href="#"  class="active">流程库</a></li>
                 <li  role="presentation" ><a href="#">项目</a></li>
                 <li  role="presentation" ><a href="#">我的</a></li>
-                <li  role="presentation" ><a href="#">创建项目</a></li>
+                <li  role="presentation" id="nav-create" style="position:relative"><a href="#">创建</a>
+                    <ul class="nav-create-ul">
+                        <li data-toggle="modal" data-target="#myProjectModal" data-backdrop="static">项目</li>
+                        <li data-toggle="modal" data-target="#myModal" data-backdrop="static">流程库</li>
+                    </ul>
+                </li>
                 <li  role="presentation" ><a href="#">管理面板</a></li>
             </ul>
         </div>
@@ -358,6 +363,80 @@
         </div>
     </div>
 
+    <!--创建项目弹出框-->
+    <div class="modal fade" id="myProjectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">创建项目</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="new-flow-form">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label >第一类别</label>
+                                <select class="form-control">
+                                    <option>hello</option>
+                                    <option>hello</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label >第一类别</label>
+                                <select class="form-control">
+                                    <option>hello</option>
+                                    <option>hello</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label >第三类别</label>
+                                <select class="form-control">
+                                    <option>hello</option>
+                                    <option>hello</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label >工作流</label>
+
+                                <div class="span-box-group">
+                                    <span>公司总体情况介绍</span>
+                                    <span>产品概况</span>
+                                    <span>技术介绍</span>
+                                    <span>客户介绍</span>
+                                    <span>发展方向</span>
+                                    <span>发展方向</span>
+                                    <span>发展方向</span>
+                                    <span>发展方向</span>
+                                    <span>发展方向</span>
+                                    <span>发展方向</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label >功能与应用</label>
+                                <div class="span-box-group span-no-link">
+                                    <span>任务</span>
+                                    <span>分享</span>
+                                    <span>定时应用</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label >项目名称:</label>
+                                <input type="text" class="form-control" placeholder="项目名称">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="error-info">您输入的信息有误！</span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">完成创建</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 </body>
@@ -373,7 +452,7 @@
             display_childmenu(e);
         });
 
-        $(".userInfo-li").on("click",function (e) {
+        $(".userInfo-li,#nav-create").on("click",function (e) {
             display_childmenu(e);
         });
 
