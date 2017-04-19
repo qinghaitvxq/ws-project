@@ -787,3 +787,56 @@ input.placeholder{
     display: flex;
     justify-content: center;
 }
+a:link{
+    text-decoration: none;
+}
+
+.my-task-body{
+    min-height:60vh;
+    background-color: white;
+    padding-left:25px;
+    padding-right:25px;
+    padding-bottom: 25px;
+
+}
+
+.task_menu{
+    border-bottom: solid 1px #c7c7c7;
+}
+.task_menu span{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 46px;
+    padding:0 10px;
+    cursor:pointer;
+
+}
+
+.task_list ul{
+  list-style: none;
+}
+.task_list ul>li{
+    list-style: none;
+    margin-top: 18px;
+
+}
+.task_list ul>li>div{
+   background-color: rgba(242, 242, 242, 1);
+    padding:10px 20px 5px 20px;
+    line-height: 22px;
+
+}
+.task_list ul>li>div>p span:last-child{
+  display: inline-block;
+  float: right;
+    color:gray;
+}
+.recordnum{
+    line-height: 40px;
+    padding-left: 15px;
+}
+.my-flow-repo>div{
+    border:solid 1px #b4b4b4;
+    margin-top: 22px;
+  padding: 10px;
+}
