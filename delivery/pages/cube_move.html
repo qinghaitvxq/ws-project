@@ -75,6 +75,15 @@
         .enterbgcolor {
             background-color: blue;
         }
+        .coverup{
+           background-color: red;
+            width:170px;
+            height:170px;
+            position:absolute;
+            top:0;
+            right:0;
+            z-index:2;
+        }
 
     </style>
     <script>
@@ -82,7 +91,22 @@
 
             //被拖拽元素
             $(".task_flow").on("dragstart",".task_detail",function (e) {
+//                var img = document.createElement("img");
+//                img.src = "http://kryogenix.org/images/hackergotchi-simpler.png";
+//                e.originalEvent.dataTransfer.setDragImage(img, 0, 0);
+
+//                this.style.opacity = 0;
+                var crt=this.cloneNode(true);
+                crt.style.backgroundColor="blue";
+                crt.style.position="absolute";
+                crt.style.top = "0px";
+                crt.style.right = "0px";
+                crt.style.opacity='0.9';
+                document.body.appendChild(crt);
+                e.originalEvent.dataTransfer.setDragImage(crt,0,0);
+                this.style.opacity = '0.8';
                 e.originalEvent.dataTransfer.setData("data",e.target.id);
+
 
             });
 
@@ -102,7 +126,10 @@
             }).on('dragleave',function (e) {
                 //this.style.backgroundColor = 'rgba(242, 242, 242, 1)';
 
-            }).on('drop',function (e) {
+            }).on('dragend',function (e) {
+//                this.style.opacity=1;
+            })
+              .on('drop',function (e) {
                 // 把拖拽事件中的传递数据取出并插入到目标元素中
                 var data = e.originalEvent.dataTransfer.getData("data");
                 if($(this).find('.btn_add_task').length>0){
@@ -145,6 +172,9 @@
                 <li>任务完成时间：2017年4月19日</li>
                 <li>任务内容：hehe</li>
             </ul>
+        </div>
+        <div class="coverup">
+
         </div>
         <div class="task_detail" id="test4">
             <ul>

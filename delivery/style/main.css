@@ -725,6 +725,7 @@ input.placeholder{
 .flow-change-log{
     min-height:60vh;
     margin-bottom:35px;
+
 }
 .flow-repo-footer{
     position:absolute;
@@ -792,6 +793,7 @@ a:link{
 }
 
 .my-task-body{
+
     min-height:60vh;
     background-color: white;
     padding-left:25px;
@@ -799,7 +801,6 @@ a:link{
     padding-bottom: 25px;
 
 }
-
 .task_menu{
     border-bottom: solid 1px #c7c7c7;
 }
