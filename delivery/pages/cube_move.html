@@ -21,7 +21,6 @@
             background-color: rgba(242, 242, 242, 1);
             border-radius:3px;
             float: left;
-
         }
         .task_flow>div>p{
             font-size:16px;
@@ -53,7 +52,7 @@
             transition: 0.5s infinite;
             /*position:absolute;*/
         }
-        .coverup{
+        .coverup,.shadow_add_area{
             background-color: #ccc5c5;
             width:320px;
             margin:5px 15px;
@@ -92,12 +91,11 @@
 </head>
 <body>
 <div class="task_flow">
-
     <div class="task_container">
         <p>公司总体情况介绍</p>
         <span class="btn_add_task">添加任务</span>
-
-        <div class="task_detail"  id="test2" style="left:10px">
+        <div class="shadow_add_area"></div>
+        <div class="task_detail"  id="test2">
             <ul>
                 <li>任务负责人：bbb</li>
                 <li>任务完成时间：2017年4月18日</li>
@@ -111,10 +109,10 @@
                 <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
             </ul>
         </div>
-
     </div>
     <div class="task_container">
         <p>产品概况</p>
+        <div class="shadow_add_area"></div>
         <div class="task_detail" id="test3">
             <ul>
                 <li>任务负责人：ccc</li>
@@ -132,15 +130,19 @@
     </div>
     <div class="task_container">
         <p>技术介绍</p>
+        <div class="shadow_add_area"></div>
     </div>
     <div class="task_container">
         <p>客户介绍</p>
+        <div class="shadow_add_area"></div>
     </div>
     <div class="task_container">
         <p>发展发现</p>
+        <div class="shadow_add_area"></div>
     </div>
     <div class="task_container">
         <p>归档</p>
+        <div class="shadow_add_area"></div>
     </div>
 </div>
 
@@ -154,11 +156,11 @@
         $(document).on("mousedown",".task_detail",function(e){
             dragging=true;
             shadowNode= $(e.target).clone().html("");
+
             shadowNode.css({
                 "background-color":"#ccc5c5",
             });
             $(e.target).after(shadowNode);
-
 
             move=e.target.getBoundingClientRect();
             tLeft = e.clientX - move.left; //鼠标按下时和选中元素的坐标偏移:x坐标
@@ -167,13 +169,27 @@
             //改变position
             dragbox=$(e.target);
             dragbox.css({
-                "position":"absolute"
+                "position":"absolute",
+                "z-index":"100"
             });
         });
 
         $(document).on("mouseup",".task_detail",function(e){
             dragging=false;
             shadowNode.remove();
+            var p=$(".shadow_add_area:visible");
+
+            var v_left=p.offset().left;
+            var v_top=p.offset().top;
+
+//            $(".shadow_add_area").css({
+//                "display":"none"
+//            });
+
+            dragbox.css({
+               "left":v_left-15+"px",
+                "top":v_top-15+"px"
+            });
         });
 
         $(document).on("mousemove",".task_detail",function(e){
@@ -195,12 +211,20 @@
                      $(this).css({
                          "background-color":"rgba(242, 242, 242, 1)"
                      });
+
+                     $(this).find(".shadow_add_area").css({
+                         "display":"none"
+                     });
                      if(((t_left+t_width)<(c_left+c_width) && (t_left+t_width)>(c_left+t_width/2)) ||
                         ((t_left+t_width/2)<(c_left+c_width) && (t_left+t_width/2)>(c_left))){
-                         $(this).css({
-                             "background-color":"red"
+
+//                         $(this).css({
+//                             "background-color":"red"
+//                         });
+                         $(this).find(".shadow_add_area").css({
+                             "display":"block"
                          });
-                         //
+                         shadowNode.remove();
                      }
 
                  });
