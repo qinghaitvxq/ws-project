@@ -51,9 +51,20 @@
             height:163px;
             overflow: hidden;
             transition: 0.5s infinite;
-
-
+            /*position:absolute;*/
         }
+        .coverup{
+            background-color: #ccc5c5;
+            width:320px;
+            margin:5px 15px;
+            margin-top:15px;
+            border-radius: 3px;
+            height:163px;
+            overflow: hidden;
+            position:relative;
+            display:none;
+        }
+
         .task_detail:hover{
           box-shadow:0px 5px 5px 2px rgba(0,0,0,0.2);
           /*transform: scale(1.06,1.06);*/
@@ -75,94 +86,32 @@
         .enterbgcolor {
             background-color: blue;
         }
-        .coverup{
-           background-color: red;
-            width:170px;
-            height:170px;
-            position:absolute;
-            top:0;
-            right:0;
-            z-index:2;
-        }
 
     </style>
-    <script>
-        $(function(){
 
-            //被拖拽元素
-            $(".task_flow").on("dragstart",".task_detail",function (e) {
-//                var img = document.createElement("img");
-//                img.src = "http://kryogenix.org/images/hackergotchi-simpler.png";
-//                e.originalEvent.dataTransfer.setDragImage(img, 0, 0);
-
-//                this.style.opacity = 0;
-                var crt=this.cloneNode(true);
-                crt.style.backgroundColor="blue";
-                crt.style.position="absolute";
-                crt.style.top = "0px";
-                crt.style.right = "0px";
-                crt.style.opacity='0.9';
-                document.body.appendChild(crt);
-                e.originalEvent.dataTransfer.setDragImage(crt,0,0);
-                this.style.opacity = '0.8';
-                e.originalEvent.dataTransfer.setData("data",e.target.id);
-
-
-            });
-
-            //目标元素
-            var container_div=$('.task_container');
-            container_div.on("dragover",function (e) {
-                e.preventDefault();
-            }).on('dragenter',function (e) {
-
-//                var target=$(e.target);
-//                this.style.backgroundColor ='#b3b2b2';
-
-//                if(target.hasClass('task_container')){
-//                    e.target.style.backgroundColor ='blue';
-//                }
-
-            }).on('dragleave',function (e) {
-                //this.style.backgroundColor = 'rgba(242, 242, 242, 1)';
-
-            }).on('dragend',function (e) {
-//                this.style.opacity=1;
-            })
-              .on('drop',function (e) {
-                // 把拖拽事件中的传递数据取出并插入到目标元素中
-                var data = e.originalEvent.dataTransfer.getData("data");
-                if($(this).find('.btn_add_task').length>0){
-                    $(this).find('.btn_add_task').after(document.getElementById(data));
-                }else{
-                    $(this).find('>p').after(document.getElementById(data));
-                }
-
-                // 目标元素样式改变
-                this.style.backgroundColor = 'rgba(242, 242, 242, 1)';
-            });
-        });
-    </script>
 </head>
 <body>
 <div class="task_flow">
+
     <div class="task_container">
         <p>公司总体情况介绍</p>
         <span class="btn_add_task">添加任务</span>
-        <div class="task_detail" draggable="true" id="test1">
-            <ul>
-                <li>任务负责人：aaa</li>
-                <li>任务完成时间：2017年4月17日</li>
-                <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
-            </ul>
-        </div>
-        <div class="task_detail" draggable="true" id="test2">
+
+        <div class="task_detail"  id="test2" style="left:10px">
             <ul>
                 <li>任务负责人：bbb</li>
                 <li>任务完成时间：2017年4月18日</li>
                 <li>任务内容：haha</li>
             </ul>
         </div>
+        <div class="task_detail"  id="test1">
+            <ul>
+                <li>任务负责人：aaa</li>
+                <li>任务完成时间：2017年4月17日</li>
+                <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
+            </ul>
+        </div>
+
     </div>
     <div class="task_container">
         <p>产品概况</p>
@@ -172,9 +121,6 @@
                 <li>任务完成时间：2017年4月19日</li>
                 <li>任务内容：hehe</li>
             </ul>
-        </div>
-        <div class="coverup">
-
         </div>
         <div class="task_detail" id="test4">
             <ul>
@@ -199,4 +145,69 @@
 </div>
 
 </body>
+<script>
+    $(function() {
+        var dragbox;
+        var dragging;
+        var tLeft,tTop;
+
+        $(document).on("mousedown",".task_detail",function(e){
+            dragging=true;
+            shadowNode= $(e.target).clone().html("");
+            shadowNode.css({
+                "background-color":"#ccc5c5",
+            });
+            $(e.target).after(shadowNode);
+
+
+            move=e.target.getBoundingClientRect();
+            tLeft = e.clientX - move.left; //鼠标按下时和选中元素的坐标偏移:x坐标
+            tTop = e.clientY - move.top; //鼠标按下时和选中元素的坐标偏移:y坐标
+
+            //改变position
+            dragbox=$(e.target);
+            dragbox.css({
+                "position":"absolute"
+            });
+        });
+
+        $(document).on("mouseup",".task_detail",function(e){
+            dragging=false;
+            shadowNode.remove();
+        });
+
+        $(document).on("mousemove",".task_detail",function(e){
+            if(dragging){
+                var moveX = e.clientX - tLeft,
+                    moveY = e.clientY - tTop;
+                e.target.style.left = moveX + 'px';
+                e.target.style.top = moveY + 'px';
+
+                //检测每个container的位置和当前拖动对象的位置情况
+                //向右方向
+                 $(".task_container").each(function (i,val) {
+
+                     var c_left=$(this).offset().left;
+                     var c_width=$(this).width();
+                     var t_left=dragbox.offset().left;
+                     var t_width=dragbox.width();
+
+                     $(this).css({
+                         "background-color":"rgba(242, 242, 242, 1)"
+                     });
+                     if(((t_left+t_width)<(c_left+c_width) && (t_left+t_width)>(c_left+t_width/2)) ||
+                        ((t_left+t_width/2)<(c_left+c_width) && (t_left+t_width/2)>(c_left))){
+                         $(this).css({
+                             "background-color":"red"
+                         });
+                         //
+                     }
+
+                 });
+            }
+        });
+
+    });
+
+</script>
 </html>
