@@ -11,10 +11,14 @@
         }
         body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
 
-        .task_flow{
+        #container{
             width:9999px;
         }
-        .task_flow>div{
+        .project_list{
+            min-height: 60vh;
+
+        }
+        #container>div{
             width:350px;
             height:600px;
             margin:10px;
@@ -22,7 +26,7 @@
             border-radius:3px;
             float: left;
         }
-        .task_flow>div>p{
+        #container>div>p{
             font-size:16px;
             font-weight: bolder;
             text-align: center;
@@ -87,151 +91,128 @@
         }
 
     </style>
+    <script src="../scripts/Sortable.js"></script>
 
 </head>
 <body>
-<div class="task_flow">
+<div id="container">
     <div class="task_container">
-        <p>公司总体情况介绍</p>
+        <p class="task_title">公司总体情况介绍</p>
         <span class="btn_add_task">添加任务</span>
-        <div class="shadow_add_area"></div>
-        <div class="task_detail"  id="test2">
-            <ul>
-                <li>任务负责人：bbb</li>
-                <li>任务完成时间：2017年4月18日</li>
-                <li>任务内容：haha</li>
-            </ul>
-        </div>
-        <div class="task_detail"  id="test1">
-            <ul>
-                <li>任务负责人：aaa</li>
-                <li>任务完成时间：2017年4月17日</li>
-                <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
-            </ul>
-        </div>
+        <ul class="project_list">
+            <li>
+                <div class="task_detail"  id="test2">
+                    <ul>
+                        <li>任务负责人：bbb</li>
+                        <li>任务完成时间：2017年4月18日</li>
+                        <li>任务内容：haha</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="task_detail"  id="test1">
+                    <ul>
+                        <li>任务负责人：aaa</li>
+                        <li>任务完成时间：2017年4月17日</li>
+                        <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+
     </div>
     <div class="task_container">
-        <p>产品概况</p>
-        <div class="shadow_add_area"></div>
-        <div class="task_detail" id="test3">
-            <ul>
-                <li>任务负责人：ccc</li>
-                <li>任务完成时间：2017年4月19日</li>
-                <li>任务内容：hehe</li>
-            </ul>
-        </div>
-        <div class="task_detail" id="test4">
-            <ul>
-                <li>任务负责人：ddd</li>
-                <li>任务完成时间：2017年4月20日</li>
-                <li>任务内容：xixi</li>
-            </ul>
-        </div>
+        <p class="task_title">test2</p>
+
+        <ul class="project_list">
+            <li>
+                <div class="task_detail" >
+                    <ul>
+                        <li>任务负责人：22</li>
+                        <li>任务完成时间：2017年4月18日</li>
+                        <li>任务内容：haha</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="task_detail"  >
+                    <ul>
+                        <li>任务负责人：33</li>
+                        <li>任务完成时间：2017年4月17日</li>
+                        <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+
     </div>
     <div class="task_container">
-        <p>技术介绍</p>
-        <div class="shadow_add_area"></div>
+        <p class="task_title">hello world</p>
+        <ul class="project_list">
+            <li>
+                <div class="task_detail">
+                    <ul>
+                        <li>任务负责人：4444</li>
+                        <li>任务完成时间：2017年4月18日</li>
+                        <li>任务内容：haha</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="task_detail">
+                    <ul>
+                        <li>任务负责人：5555</li>
+                        <li>任务完成时间：2017年4月17日</li>
+                        <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+
     </div>
     <div class="task_container">
-        <p>客户介绍</p>
-        <div class="shadow_add_area"></div>
+        <p class="task_title">hello</p>
+        <ul class="project_list">
+            <li>
+                <div class="task_detail">
+                    <ul>
+                        <li>任务负责人：55555</li>
+                        <li>任务完成时间：2017年4月18日</li>
+                        <li>任务内容：haha</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="task_detail">
+                    <ul>
+                        <li>任务负责人：6666</li>
+                        <li>任务完成时间：2017年4月17日</li>
+                        <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+
     </div>
-    <div class="task_container">
-        <p>发展发现</p>
-        <div class="shadow_add_area"></div>
-    </div>
-    <div class="task_container">
-        <p>归档</p>
-        <div class="shadow_add_area"></div>
-    </div>
+
 </div>
 
 </body>
 <script>
-    $(function() {
-        var dragbox;
-        var dragging;
-        var tLeft,tTop;
-
-        $(document).on("mousedown",".task_detail",function(e){
-            dragging=true;
-            shadowNode= $(e.target).clone().html("");
-
-            shadowNode.css({
-                "background-color":"#ccc5c5",
-            });
-            $(e.target).after(shadowNode);
-
-            move=e.target.getBoundingClientRect();
-            tLeft = e.clientX - move.left; //鼠标按下时和选中元素的坐标偏移:x坐标
-            tTop = e.clientY - move.top; //鼠标按下时和选中元素的坐标偏移:y坐标
-
-            //改变position
-            dragbox=$(e.target);
-            dragbox.css({
-                "position":"absolute",
-                "z-index":"100"
-            });
+    var container = document.getElementById('container');
+    (function (){
+        new Sortable(container, {
+            draggable: '.task_container',
+            handle: '.task_title'
         });
 
-        $(document).on("mouseup",".task_detail",function(e){
-            dragging=false;
-            shadowNode.remove();
-            var p=$(".shadow_add_area:visible");
-
-            var v_left=p.offset().left;
-            var v_top=p.offset().top;
-
-//            $(".shadow_add_area").css({
-//                "display":"none"
-//            });
-
-            dragbox.css({
-               "left":v_left-15+"px",
-                "top":v_top-15+"px"
-            });
+        [].forEach.call(container.getElementsByClassName('project_list'), function (el){
+            new Sortable(el, { group: 'photo' });
         });
-
-        $(document).on("mousemove",".task_detail",function(e){
-            if(dragging){
-                var moveX = e.clientX - tLeft,
-                    moveY = e.clientY - tTop;
-                e.target.style.left = moveX + 'px';
-                e.target.style.top = moveY + 'px';
-
-                //检测每个container的位置和当前拖动对象的位置情况
-                //向右方向
-                 $(".task_container").each(function (i,val) {
-
-                     var c_left=$(this).offset().left;
-                     var c_width=$(this).width();
-                     var t_left=dragbox.offset().left;
-                     var t_width=dragbox.width();
-
-                     $(this).css({
-                         "background-color":"rgba(242, 242, 242, 1)"
-                     });
-
-                     $(this).find(".shadow_add_area").css({
-                         "display":"none"
-                     });
-                     if(((t_left+t_width)<(c_left+c_width) && (t_left+t_width)>(c_left+t_width/2)) ||
-                        ((t_left+t_width/2)<(c_left+c_width) && (t_left+t_width/2)>(c_left))){
-
-//                         $(this).css({
-//                             "background-color":"red"
-//                         });
-                         $(this).find(".shadow_add_area").css({
-                             "display":"block"
-                         });
-                         shadowNode.remove();
-                     }
-
-                 });
-            }
-        });
-
-    });
-
+    })();
 </script>
 </html>

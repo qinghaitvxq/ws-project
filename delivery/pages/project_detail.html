@@ -15,6 +15,7 @@
 
     <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
     <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/sortable.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,7 +67,7 @@
     </script>
     <![endif]-->
 </head>
-<body class="flow-repo-body">
+<body class="flow-repo-body project_detail_body">
 <div class="container-fluid">
     <div class="row header">
         <div class="col-md-3"></div>
@@ -122,67 +123,111 @@
 
     </div>
     <div class="row main-content">
-        <div class="col-md-1 "></div>
-        <div class="col-md-10 flow-repo-content" >
-            <table class="table table-striped project-create-table">
-                <thead>
-                <th>流程类型</th>
-                <th>流程归属</th>
-                <th>工作流</th>
-                <th>操作</th>
+        <div id="container">
+            <div class="task_container">
+                <p class="task_title">公司总体情况介绍</p>
+                <span class="btn_add_task">添加任务</span>
+                <ul class="project_list">
+                    <li>
+                        <div class="task_detail"  id="test2">
+                            <ul>
+                                <li>任务负责人：bbb</li>
+                                <li>任务完成时间：2017年4月18日</li>
+                                <li>任务内容：haha</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task_detail"  id="test1">
+                            <ul>
+                                <li>任务负责人：aaa</li>
+                                <li>任务完成时间：2017年4月17日</li>
+                                <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
 
-                </thead>
-                <tbody>
-                <tr><td>产品</td>
-                    <td>产品-市场调研-友商分析</td>
-                    <td>公司总体情况介绍-产品概况-技术介绍-客户介绍-发展方向</td>
-                    <td> <button class="btn">
-                        <span class="glyphicon glyphicon-plus"></span>
-                        <span>创建项目</span>
-                    </button>
-                    </td>
-                </tr>
-                <tr><td>产品</td>
-                    <td>产品-市场调研-友商分析</td>
-                    <td>公司总体情况介绍-产品概况-技术介绍-客户介绍-发展方向</td>
-                    <td> <button class="btn">
-                        <span class="glyphicon glyphicon-plus"></span>
-                        <span>创建项目</span>
-                    </button>
-                    </td>
-                </tr>
-                <tr><td>产品</td>
-                    <td>产品-市场调研-友商分析</td>
-                    <td>公司总体情况介绍-产品概况-技术介绍-客户介绍-发展方向</td>
-                    <td> <button class="btn">
-                        <span class="glyphicon glyphicon-plus"></span>
-                        <span>创建项目</span>
-                    </button>
-                    </td>
-                </tr>
-                <tr><td>研发</td>
-                    <td>研发-市场调研-友商分析</td>
-                    <td>公司总体情况介绍-产品概况-技术介绍-客户介绍-发展方向</td>
-                    <td> <button class="btn">
-                        <span class="glyphicon glyphicon-plus"></span>
-                        <span>创建项目</span>
-                    </button>
-                    </td>
-                </tr>
-                <tr><td>运营</td>
-                    <td>运营-市场调研-友商分析</td>
-                    <td>公司总体情况介绍-产品概况-技术介绍-客户介绍-发展方向</td>
-                    <td> <button class="btn">
-                        <span class="glyphicon glyphicon-plus"></span>
-                        <span>创建项目</span>
-                    </button>
-                    </td>
-                </tr>
 
-                </tbody>
-            </table>
+            </div>
+            <div class="task_container">
+                <p class="task_title">test2</p>
+
+                <ul class="project_list">
+                    <li>
+                        <div class="task_detail" >
+                            <ul>
+                                <li>任务负责人：22</li>
+                                <li>任务完成时间：2017年4月18日</li>
+                                <li>任务内容：haha</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task_detail"  >
+                            <ul>
+                                <li>任务负责人：33</li>
+                                <li>任务完成时间：2017年4月17日</li>
+                                <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="task_container">
+                <p class="task_title">hello world</p>
+                <ul class="project_list">
+                    <li>
+                        <div class="task_detail">
+                            <ul>
+                                <li>任务负责人：4444</li>
+                                <li>任务完成时间：2017年4月18日</li>
+                                <li>任务内容：haha</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task_detail">
+                            <ul>
+                                <li>任务负责人：5555</li>
+                                <li>任务完成时间：2017年4月17日</li>
+                                <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="task_container">
+                <p class="task_title">hello</p>
+                <ul class="project_list">
+                    <li>
+                        <div class="task_detail">
+                            <ul>
+                                <li>任务负责人：55555</li>
+                                <li>任务完成时间：2017年4月18日</li>
+                                <li>任务内容：haha</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task_detail">
+                            <ul>
+                                <li>任务负责人：6666</li>
+                                <li>任务完成时间：2017年4月17日</li>
+                                <li>任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+
         </div>
-        <div class="col-md-1" ></div>
     </div>
     <div class=" row flow-repo-footer">
         <span>如需帮助，请拨打110....</span>
@@ -273,54 +318,20 @@
 <script src="../scripts/modal.js"></script>
 <script src="../scripts/helper_plugins.js"></script>
 <script src="../scripts/flow_tree.js"></script>
+<script src="../scripts/Sortable.js"></script>
+
 <script>
     $(document).ready(function () {
-        $("#flowtree").flowtree();
-
-        $(".nav-bar").on("mouseenter mouseleave",">ul>li",function (e) {
-            display_childmenu(e);
+        var container = document.getElementById('container');
+        new Sortable(container, {
+            draggable: '.task_container',
+            handle: '.task_title'
         });
 
-        $(".userInfo-li").on("click",function (e) {
-            display_childmenu(e);
+        [].forEach.call(container.getElementsByClassName('project_list'), function (el){
+            new Sortable(el, { group: 'photo' });
         });
-
-//        $('.flow-repo-content').no_data_tips();
-
-        //新建流程- 附件
-        $('#my_file_upload').file_upload('init');
-
-        var currentfiles=[
-            "hello1.pdf",
-            "hello2.pdf"
-        ];
-        //编辑流程-附件
-        $('#my_file_upload_edit').file_upload('init',{
-            filelist:currentfiles,
-            delserverfile:function(filename){
-                console.log('要从服务器上删除的文件是：'+filename);
-            }
-        });
-
     });
-    function display_childmenu(target) {
-        var menu_ul=$(target.currentTarget).find('ul');
-        if(!menu_ul||menu_ul.length==0 ) return;
-        if(target.type=="mouseenter"){
-            menu_ul.show();
-        }
-        if(target.type=="mouseleave"){
-            menu_ul.hide();
-        }
-        if(target.type=="click"){
-            var isVilible=menu_ul.is(":visible");
-            if(isVilible){
-                menu_ul.hide();
-            }
-            else {
-                menu_ul.show();
-            }
-        }
-    }
+
 </script>
 </html>
