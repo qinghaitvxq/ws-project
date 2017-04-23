@@ -10,6 +10,7 @@
 }
 .project_list{
     min-height: 60vh;
+    list-style-type: none;
 
 }
 #container>div{
@@ -80,12 +81,4 @@
     pointer-events: none;
 
 }
-.enterbgcolor {
-    background-color: blue;
-}
-.project_detail_body{
-    background-color: white;
-}
-.project_detail_body .navigator{
-    background-color: white;
-}
+

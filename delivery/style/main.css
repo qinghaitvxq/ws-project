@@ -777,7 +777,9 @@ input.placeholder{
 .span-no-link span:after{
     content: '';
 }
-
+.project-bar{
+    position:relative;
+}
 .project-bar>h3{
    text-align: center;
     margin-top: 12px;
@@ -835,9 +837,58 @@ a:link{
 .recordnum{
     line-height: 40px;
     padding-left: 15px;
+
 }
 .my-flow-repo>div{
     border:solid 1px #b4b4b4;
     margin-top: 22px;
   padding: 10px;
+
+
+}
+
+.member_list ul{
+    list-style-type: none;
+    margin-top: 20px;
+}
+.project_detail_body{
+    background-color: white;
+}
+.project_detail_body .navigator{
+    background-color: white;
+}
+.arrow_icon{
+    display:inline-block;
+    float: right;
+    cursor:pointer;
+    pointer-events: auto;
+    color:rgb(118,199,193);
+}
+.add_member{
+    position:absolute;
+    left:85%;
+    top:50%;
+    padding:5px 5% 5px 5%;
+    border:dashed 1px gray;
+
+}
+.add_member:hover{
+    background-color: gray;
+    color:white;
+}
+.add_area{
+    border:dashed 1px gray;
+    padding:10px 10px;
+}
+.member_list {
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 3px 12px rgba(27, 31, 35, 0.59);
+    z-index:100;
+    padding:20px;
+    line-height: 30px;
+    min-height: 100px;
+    color:gray;
+    position: absolute;
+    display:none;
 }
