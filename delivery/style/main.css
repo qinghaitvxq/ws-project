@@ -864,16 +864,22 @@ a:link{
     pointer-events: auto;
     color:rgb(118,199,193);
 }
-.add_member{
+.add_member_area{
     position:absolute;
-    left:85%;
-    top:50%;
-    padding:5px 5% 5px 5%;
-    border:dashed 1px gray;
+    left:75%;
+    top:40%;
+    overflow: hidden;
+    width:330px;
+    padding: 15px;
+}
+.add_member{
+    padding:8px 5% 8px 5%;
+    border:dashed 1px rgb(118,199,193);;
+    text-align: center;
 
 }
 .add_member:hover{
-    background-color: gray;
+    background-color: rgb(118,199,193);
     color:white;
 }
 .add_area{
@@ -889,6 +895,83 @@ a:link{
     line-height: 30px;
     min-height: 100px;
     color:gray;
-    position: absolute;
+    margin-top: 3px;
     display:none;
 }
+
+.create_task_table td{
+   padding: 8px;
+}
+.task_detail_popwin{
+   position:absolute;
+    display:none;
+    width:45%;
+    padding:10px;
+    box-shadow: 0 3px 12px rgba(27, 31, 35, 0.59);
+    background-color: white;
+    border-radius: 5px;
+
+}
+.task_segment{
+    border-bottom: solid 1px #c7c7c7;
+    padding: 15px 8px 0 8px;
+    overflow: hidden;
+}
+.show_all_records{
+    text-align: center;
+    color:#337ab7;
+}
+.show_all_records>span{
+    cursor:pointer;
+}
+.task_detail_popwin>div:last-child{
+    border-bottom: none;
+}
+.task_update_records{
+    line-height: 30px;
+    list-style-type: none;
+}
+.task_update_records .task_title{
+    font-size:16px;
+    font-weight: bold;
+}
+.task_update_records .glyphicon-remove{
+    font-size:24px;
+    cursor:pointer;
+}
+.task_update_records>li{
+  overflow: hidden;
+}
+
+.task_update_records>li>span{
+    display: inline-block;
+    padding-left: 5%;
+    float: left;
+}
+.task_update_records>li>span:first-child{
+    padding-left: 0;
+}
+.task_update_records>li>span:last-child{
+    display: inline-block;
+    float: right;
+}
+.task_btn_group{
+   float:right;
+    padding:5px 0px 15px 0px;
+}
+.task_detail_table{
+    width: 90%;
+    margin-left: 5px;
+}
+.task_detail_table td{
+    width:30%;
+    text-align: left;
+
+}
+.task_detail_table th{
+    text-align: left;
+    padding-left: 10px;
+}
+#update_records{
+
+ }

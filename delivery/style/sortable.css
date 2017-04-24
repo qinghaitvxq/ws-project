@@ -11,11 +11,12 @@
 .project_list{
     min-height: 60vh;
     list-style-type: none;
+    height:auto;
 
 }
 #container>div{
     width:350px;
-    height:600px;
+    height:auto;
     margin:10px;
     background-color: rgba(242, 242, 242, 1);
     border-radius:3px;
