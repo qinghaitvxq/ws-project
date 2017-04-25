@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>进度</title>
+
+    <!-- Bootstrap -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="../style/bootstrap.css">
+    <!--<link rel="stylesheet" href="../style/main-min.css">-->
+
+
+    <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/sortable.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <style>
+        .ref_doc_content,
+        .flow-repo-content,
+        .flow-change-log {
+            /*height:auto !important;*/
+            height: 300px;
+
+        }
+
+        .no_data {
+            width: 300px;
+            height: 100px;
+            padding: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -80px 0 0 -180px;
+            font-size: 2em;
+            text-align: center;
+            color: gray;
+        }
+
+        .new-flow {
+            width: 150px;
+            height: 34px;
+            position: absolute;
+            top: 50%;
+            margin-top: -17px;
+            float: right;
+        }
+
+        #div_file {
+            display: none;
+        }
+
+        #div_file_tips {
+            display: block;
+        }
+
+    </style>
+    <script>
+        if (typeof String.prototype.trim !== 'function') {
+            String.prototype.trim = function () {
+                return this.replace(/^\s+|\s+$/g, '');
+            };
+        }
+    </script>
+    <![endif]-->
+</head>
+<body class="flow-repo-body project_detail_body">
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <ul class="nav-ws">
+                <li role="presentation"><a href="#" class="active">流程库</a></li>
+                <li role="presentation"><a href="#">项目</a></li>
+                <li role="presentation"><a href="#">我的</a></li>
+                <li role="presentation" id="nav-create" style="position:relative"><a href="#">创建</a>
+                    <ul class="nav-create-ul">
+                        <li data-toggle="modal" data-target="#myProjectModal" data-backdrop="static">项目</li>
+                        <li data-toggle="modal" data-target="#myModal" data-backdrop="static">流程库</li>
+                    </ul>
+                </li>
+                <li role="presentation"><a href="#">管理面板</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <ul class="userInfo">
+                <li role="presentation"><a href="#">使用说明</a></li>
+                <!--<li  role="presentation" ><a href="#">搜索</a></li>-->
+                <!--<li  role="presentation" ><a href="#">个人设置</a></li>-->
+                <li role="presentation" class="userInfo-li">
+                    <a href="#">15
+                        <span class="down-icon"></span>
+                    </a>
+
+                    <ul class="userInfo-dropdown-ul">
+                        <li>个人设置</li>
+                        <li>退出</li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="row navigator ">
+
+        <div class="col-md-12 nav-bar project-bar">
+            <h3>国际公司调研</h3>
+            <ul>
+                <li><a href="#">流程</a></li>
+                <li><a href="#">任务清单</a></li>
+                <li><a href="#">进度</a></li>
+                <li><a href="#">分享</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row main-content">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8 my-task-body my-flow-repo">
+            <div class="project_info">
+               <p>项目信息</p>
+                <ul>
+                    <li>
+                        <span>发起人</span>
+                        <div><span>欧阳娜拉</span></div>
+                    </li>
+                    <li>
+                        <span>参与人</span>
+                        <div>
+                            <span>欧阳娜拉</span>
+                            <span>欧阳娜拉</span>
+                            <span>欧阳娜拉</span>
+                            <span>欧阳娜拉</span>
+                            <span>欧阳娜拉</span>
+                            <span>欧阳娜拉</span>
+                            <span>欧阳娜拉</span>
+
+                        </div>
+                    </li>
+                    <li>
+                        <span>项目创建时间</span>
+                        <div><span>2017-12-27 18:00:00</span></div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="project_process">
+                <p>项目进展</p>
+                <ul>
+                    <li><span>未开始:</span><span>12个</span></li>
+                    <li><span>进行中:</span><span>2个</span></li>
+                    <li><span>进行中逾期:</span><span>0个</span></li>
+                    <li><span>完结:</span><span>1个</span></li>
+                    <li><span>逾期完结:</span><span>2个</span></li>
+                </ul>
+            </div>
+
+            <div class="project_report">
+                <p>任务完结报告</p>
+                <ul class="task_update_records">
+                    <li><span>国际竞品公司调研报告</span><span>2017-12-27</span><span>小东方</span><span> <a
+                            href="#">查看</a></span></li>
+                    <li><span>国际竞品公司调研报告</span><span>19.8KB</span><span> <a href="#">查看</a></span></li>
+                </ul>
+
+                <ul class="task_update_records">
+                    <li><span>hello world</span><span>2017-12-27</span><span>小东方</span><span> <a
+                            href="#">查看</a></span></li>
+                    <li><span>hello world</span><span>19.8KB</span><span> <a href="#">查看</a></span></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <div class=" row flow-repo-footer">
+
+        <span>如需帮助，请拨打110....</span>
+    </div>
+
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../scripts/modal.js"></script>
+<script src="../scripts/helper_plugins.js"></script>
+<script src="../scripts/flow_tree.js"></script>
+<script src="../scripts/Sortable.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+    function pageLoad() {
+        var li_num = $("#update_records").children("li").length;
+
+        if (li_num > 6) {
+            $(".show_all_records").show();
+            $("#update_records").css({
+                "height": "180px",
+                "overflow": "hidden"
+            });
+        } else {
+            $(".show_all_records").hide();
+        }
+    }
+
+    $(document).ready(function () {
+        pageLoad();
+
+        [].forEach.call(container.getElementsByClassName('project_list'), function (el) {
+            new Sortable(el, {group: 'photo'});
+        });
+
+
+        //历史记录展开 收起
+        $(".show_all_records").click(function (e) {
+
+            var ori_text = $(this).find("span").text();
+            var new_text = ori_text == "展开" ? "收起" : "展开";
+            $(this).find("span").html(new_text);
+            if (ori_text === "展开") {
+                $("#update_records").css({
+                    "height": "auto",
+                });
+
+            } else {
+                $("#update_records").css({
+                    "height": "180px",
+                    "overflow": "hidden"
+                });
+            }
+        });
+
+        //任务展开收起
+        $(".arrow_icon").click(function (e) {
+            var ori_text = $(this).text();
+            var p_ele = $(this).parent().parent().parent();
+            var p_ele_s = $(this).parent().parent();
+
+            var new_text = ori_text === "展开" ? "收起" : "展开";
+            $(this).html(new_text);
+
+            if (ori_text === "展开") {
+                if (p_ele_s.height() > 160) {
+                    p_ele.css({
+                        "height": "auto"
+                    });
+                }
+            } else {
+                p_ele.css({
+                    "height": "163px"
+                });
+            }
+
+        });
+
+        //添加任务成员
+        $(".add_member").click(function (e) {
+            var m_list = $(".member_list");
+            m_list.is(":visible") == true ? m_list.hide() : m_list.show();
+
+        });
+        $(".datepicker").datepicker();
+        $(".project_list>li").click(function (e) {
+            if(e.target.nodeName!="SPAN") {
+                var pos = $(this).offset();
+                $(".task_detail_popwin").css({
+                    "display": "block",
+                    "left": pos.left + 350 + "px",
+                    "top": pos.top + "px"
+                });
+            }
+        });
+        $(".task_detail_popwin_close").click(function () {
+            $(".task_detail_popwin").hide();
+        });
+    });
+
+</script>
+</html>

@@ -340,7 +340,7 @@ table td{
 .font-weight-bold{
     font-weight: bold;
 }
-.btn-reply{
+.btn-reply,.pointer{
     cursor:pointer;
 }
 .flow-tree{
@@ -930,6 +930,8 @@ a:link{
 .task_update_records{
     line-height: 30px;
     list-style-type: none;
+    background-color: rgba(242, 242, 242, 1);
+    padding: 8px;
 }
 .task_update_records .task_title{
     font-size:16px;
@@ -972,6 +974,75 @@ a:link{
     text-align: left;
     padding-left: 10px;
 }
-#update_records{
+.project_process ul,.project_info ul{
+    list-style-type: none;
+    overflow: hidden;
+}
+.project_process>ul>li{
+    float: left;
+    padding: 0 5% 0 5%;
+}
+.project_process ul>li:first-child{
+    padding-left: 0;
+}
+.project_process p,.project_info p,.project_report p{
+    font-size: 15px;
+    font-weight: bold;
+}
+.project_info>ul>li{
+   overflow: hidden;
+    line-height: 26px;
+}
+.project_info>ul>li>span{
+    display: inline-block;
+    float:left;
+    width:15%;
+}
+.project_info>ul>li>div{
+   float:left;
+   width: 80%;
+}
+.project_info>ul>li>div>span{
+   padding: 10px;
+}
+.project_prd_list{
+    list-style-type: none;
+    margin-top: 10px;
 
- }
+}
+.project_prd_list>li{
+    background-color:  rgba(242, 242, 242, 1);
+    padding: 8px;
+    margin-top: 3px;
+}
+.title_p{
+    font-size: 15px;
+    font-weight: bold;
+}
+.project_prd_list>li>p:first-child{
+   cursor:pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+.project_share_content{
+    border-top: solid 1px rgb(238,238,238);
+    padding-top: 20px;
+}
+.div_border{
+    border: solid 1px rgb(238,238,238);
+    padding: 20px;
+}
+.full_width{
+    width: 100%;
+}
+.div_pl_10p{
+    padding-left:10%
+}
+.span_pl_3p{
+    padding-left: 3%;
+}
+.project_full_report{
+    width:70%;
+    margin: 0 auto;
+    margin-top: 5%;
+}

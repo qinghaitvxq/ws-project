@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>分享</title>
+
+    <!-- Bootstrap -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="../style/bootstrap.css">
+    <!--<link rel="stylesheet" href="../style/main-min.css">-->
+
+
+    <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.js"></script>
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/sortable.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <style>
+        .ref_doc_content,
+        .flow-repo-content,
+        .flow-change-log {
+            /*height:auto !important;*/
+            height: 300px;
+
+        }
+
+        .no_data {
+            width: 300px;
+            height: 100px;
+            padding: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -80px 0 0 -180px;
+            font-size: 2em;
+            text-align: center;
+            color: gray;
+        }
+
+        .new-flow {
+            width: 150px;
+            height: 34px;
+            position: absolute;
+            top: 50%;
+            margin-top: -17px;
+            float: right;
+        }
+
+        #div_file {
+            display: none;
+        }
+
+        #div_file_tips {
+            display: block;
+        }
+
+    </style>
+    <script>
+        if (typeof String.prototype.trim !== 'function') {
+            String.prototype.trim = function () {
+                return this.replace(/^\s+|\s+$/g, '');
+            };
+        }
+    </script>
+    <![endif]-->
+</head>
+<body class="flow-repo-body project_detail_body">
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <ul class="nav-ws">
+                <li role="presentation"><a href="#" class="active">流程库</a></li>
+                <li role="presentation"><a href="#">项目</a></li>
+                <li role="presentation"><a href="#">我的</a></li>
+                <li role="presentation" id="nav-create" style="position:relative"><a href="#">创建</a>
+                    <ul class="nav-create-ul">
+                        <li data-toggle="modal" data-target="#myProjectModal" data-backdrop="static">项目</li>
+                        <li data-toggle="modal" data-target="#myModal" data-backdrop="static">流程库</li>
+                    </ul>
+                </li>
+                <li role="presentation"><a href="#">管理面板</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <ul class="userInfo">
+                <li role="presentation"><a href="#">使用说明</a></li>
+                <!--<li  role="presentation" ><a href="#">搜索</a></li>-->
+                <!--<li  role="presentation" ><a href="#">个人设置</a></li>-->
+                <li role="presentation" class="userInfo-li">
+                    <a href="#">15
+                        <span class="down-icon"></span>
+                    </a>
+
+                    <ul class="userInfo-dropdown-ul">
+                        <li>个人设置</li>
+                        <li>退出</li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="row navigator ">
+
+        <div class="col-md-12 nav-bar project-bar">
+            <h3>国际公司调研</h3>
+            <ul>
+                <li><a href="#">流程</a></li>
+                <li><a href="#">任务清单</a></li>
+                <li><a href="#">进度</a></li>
+                <li><a href="#">分享</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row main-content project_share_content" >
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary full_width" data-toggle="modal" data-target="#create_share" ><span class="glyphicon glyphicon-plus"></span><span>添加分享</span></button>
+            <ul class="project_prd_list">
+               <li>
+                   <p>产品需求文档V2.0</p>
+                   <p>小东方 发布于2017-12-27 12:00:00</p>
+               </li>
+                <li>
+                    <p>产品需求文档V2.0</p>
+                    <p>小东方 发布于2017-12-27 12:00:00</p>
+                </li>
+                <li>
+                    <p>产品需求文档V2.0</p>
+                    <p>小东方 发布于2017-12-27 12:00:00</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-7" >
+            <div class="div_pl_10p">
+            <h4 class="focus-black-font">产品需求文档V2.0
+              <!--<span class="btn btn-primary">删除</span>-->
+                <span class="glyphicon glyphicon-remove btn-red-font span_pl_3p pointer "></span>
+            </h4>
+            <ul class="file_list_ul">
+                <li>
+                    <a href="http://wenku.baidu.com/view/d870fb1aa8114431b90dd878.html" download="hello.html">国际竞品公司调研.doc</a>
+                </li>
+
+            </ul>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <div class=" row flow-repo-footer">
+
+        <span>如需帮助，请拨打110....</span>
+    </div>
+    <!--添加分享弹出框-->
+    <div class="modal fade" id="create_share" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="edit_flow_modal_label">创建分享至 <span class="span_pl_3p">国际公司调研</span></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="new-flow-form">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label >文档标题</label>
+                                <input  class="form-control" >
+                            </div>
+                            <div class="form-group">
+
+                                <textarea class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default">添加附件</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="error-info">您输入的信息有误！</span>
+                    <button type="button" class="btn btn-primary">发布分享</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../scripts/modal.js"></script>
+<script src="../scripts/helper_plugins.js"></script>
+<script src="../scripts/flow_tree.js"></script>
+<script src="../scripts/Sortable.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+    function pageLoad() {
+        var li_num = $("#update_records").children("li").length;
+
+        if (li_num > 6) {
+            $(".show_all_records").show();
+            $("#update_records").css({
+                "height": "180px",
+                "overflow": "hidden"
+            });
+        } else {
+            $(".show_all_records").hide();
+        }
+    }
+
+    $(document).ready(function () {
+        pageLoad();
+
+        [].forEach.call(container.getElementsByClassName('project_list'), function (el) {
+            new Sortable(el, {group: 'photo'});
+        });
+
+
+        //历史记录展开 收起
+        $(".show_all_records").click(function (e) {
+
+            var ori_text = $(this).find("span").text();
+            var new_text = ori_text == "展开" ? "收起" : "展开";
+            $(this).find("span").html(new_text);
+            if (ori_text === "展开") {
+                $("#update_records").css({
+                    "height": "auto",
+                });
+
+            } else {
+                $("#update_records").css({
+                    "height": "180px",
+                    "overflow": "hidden"
+                });
+            }
+        });
+
+        //任务展开收起
+        $(".arrow_icon").click(function (e) {
+            var ori_text = $(this).text();
+            var p_ele = $(this).parent().parent().parent();
+            var p_ele_s = $(this).parent().parent();
+
+            var new_text = ori_text === "展开" ? "收起" : "展开";
+            $(this).html(new_text);
+
+            if (ori_text === "展开") {
+                if (p_ele_s.height() > 160) {
+                    p_ele.css({
+                        "height": "auto"
+                    });
+                }
+            } else {
+                p_ele.css({
+                    "height": "163px"
+                });
+            }
+
+        });
+
+        //添加任务成员
+        $(".add_member").click(function (e) {
+            var m_list = $(".member_list");
+            m_list.is(":visible") == true ? m_list.hide() : m_list.show();
+
+        });
+        $(".datepicker").datepicker();
+        $(".project_list>li").click(function (e) {
+            if(e.target.nodeName!="SPAN") {
+                var pos = $(this).offset();
+                $(".task_detail_popwin").css({
+                    "display": "block",
+                    "left": pos.left + 350 + "px",
+                    "top": pos.top + "px"
+                });
+            }
+        });
+        $(".task_detail_popwin_close").click(function () {
+            $(".task_detail_popwin").hide();
+        });
+    });
+
+</script>
+</html>
