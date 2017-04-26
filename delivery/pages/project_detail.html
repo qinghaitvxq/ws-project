@@ -114,9 +114,18 @@
     <div class="row navigator ">
 
         <div class="col-md-12 nav-bar project-bar">
-            <h3>国际公司调研</h3>
+            <h3>国际公司调研
+                <span class="span_font_14">
+                     <select id="sel_project">
+                         <option value="-1" selected="selected">请选择</option>
+                         <option  value="1">修改名称</option>
+                         <option  value="2">项目完结</option>
+                         <option  value="3">删除项目</option>
+                     </select>
+                 </span>
+            </h3>
             <ul>
-                <li><a href="#">流程</a></li>
+                <li class="current_p_bar"><a  href="#">流程</a></li>
                 <li><a href="#">任务清单</a></li>
                 <li><a href="#">进度</a></li>
                 <li><a href="#">分享</a></li>
@@ -125,6 +134,7 @@
                 <div class="add_member">
                     <span class="glyphicon glyphicon-plus"></span>
                     <span class=" glyphicon glyphicon-user"></span>
+                    <span class="title_p">(5)</span>
                 </div>
                 <div class="member_list">
                     <div class="add_area">
@@ -448,6 +458,32 @@
         </div>
     </div>
 
+    <!--修改项目名称弹出框-->
+    <div class="modal fade" id="updateProjectName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalupdatename">修改名称</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="new-flow-form">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label >项目名称:</label>
+                                <input type="text" class="form-control" placeholder="项目名称">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="error-info">您输入的信息有误！</span>
+                    <button type="button" class="btn btn-primary">提交修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 
@@ -480,7 +516,13 @@
 
     $(document).ready(function () {
         pageLoad();
-
+        //项目名称下拉框
+        $('#sel_project').change(function() {
+            jQuery.noConflict();
+             if(this.value==="1"){
+                 $('#updateProjectName').modal("show");
+             }
+        });
         [].forEach.call(container.getElementsByClassName('project_list'), function (el) {
             new Sortable(el, {group: 'photo'});
         });

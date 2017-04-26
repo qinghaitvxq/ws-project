@@ -48,7 +48,7 @@
                         <input class="form-control" placeholder="报告名称">
                     </div>
                 </div>
-                <div class="form-group div_pl_10p div_border" >
+                <div class="form-group div_pl_10p div_border">
                     <ul id="flowtree">
 
                     </ul>
@@ -80,7 +80,9 @@
 <script src="../scripts/flow_tree.js"></script>
 <script>
     $(document).ready(function () {
-        $("#flowtree").flowtree();
+        $("#flowtree").flowtree({
+            "readonly": true
+        });
         //新建流程- 附件
         $('#my_file_upload').file_upload('init');
     });

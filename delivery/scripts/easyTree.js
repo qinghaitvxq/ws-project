@@ -211,7 +211,10 @@
 
                 $('body').append($(popover));
 
-                $(easyTree).delegate("li.parent_li span:not('.glyphicon')", 'mouseenter mouseleave', function (e) {
+                // $(easyTree).delegate("li.parent_li span:not('.glyphicon')", 'mouseenter mouseleave', function (e) {
+
+                    $(easyTree).delegate("li span:not('.glyphicon')", 'mouseenter mouseleave', function (e) {
+
                     var desc=$(this).parent('li').attr('desc');
                     if(!desc || desc.length<=0){
                         desc="暂无描述信息";
