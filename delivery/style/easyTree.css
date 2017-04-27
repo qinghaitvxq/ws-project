@@ -6,7 +6,8 @@
     /*color: #fff;*/
     border: 0;
     border-top: 0;
-    padding-bottom: 15px
+    padding-bottom: 15px;
+    padding-right:10px;
 }
 
 .easy-tree>ul {

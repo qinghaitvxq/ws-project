@@ -201,43 +201,84 @@
                 });
             }
 
+            // if(options.showtips){
+            //
+            //     var popover="<div class='popover fade right in tree-info-pover gray-font'"
+            //                +"style='display: none;min-height: 60px;'>"
+            //                +"<div class='arrow' style='top: 25px'></div><h3 class='popover-title' style='display: none;'></h3>"
+            //                +"<div class='popover-content'></div>"
+            //                +"</div>";
+            //
+            //     $('body').append($(popover));
+            //
+            //     // $(easyTree).delegate("li.parent_li span:not('.glyphicon')", 'mouseenter mouseleave', function (e) {
+            //
+            //         $(easyTree).delegate("li span:not('.glyphicon')", 'mouseenter mouseleave', function (e) {
+            //
+            //         var desc=$(this).parent('li').attr('desc');
+            //         if(!desc || desc.length<=0){
+            //             desc="暂无描述信息";
+            //         }
+            //
+            //         var cur_ele_pos=$(this).offset();
+            //         var left=cur_ele_pos.left;
+            //         var top=cur_ele_pos.top;
+            //         var width=$(this).width();
+            //         var height=$(this).height();
+            //
+            //         $('.popover').css({
+            //             "position":"absolute",
+            //             "display":"block",
+            //             "left":left+width+16+"px",
+            //             "top":top-10+"px",
+            //         }).find('.popover-content').text(desc);
+            //
+            //         if(e.type=="mouseleave"){
+            //              $('.popover').hide();
+            //         }
+            //
+            //  });
+            // }
+
             if(options.showtips){
 
-                var popover="<div class='popover fade right in tree-info-pover gray-font'"
-                           +"style='display: none;min-height: 60px;'>"
-                           +"<div class='arrow' style='top: 25px'></div><h3 class='popover-title' style='display: none;'></h3>"
-                           +"<div class='popover-content'></div>"
-                           +"</div>";
+                $(easyTree).find("li>span").each(function () {
+                   var desc=$(this).parent('li').attr('desc');
 
-                $('body').append($(popover));
+                    if(desc && desc.length>0) {
+                        var right_tips = "<div class='right_tips'> "
+                            + "<div class='left-arrow'></div>"
+                            + "<div class='tips_desc'></div>"
+                            + "</div>";
 
-                // $(easyTree).delegate("li.parent_li span:not('.glyphicon')", 'mouseenter mouseleave', function (e) {
+                        $(this).after(right_tips);
 
-                    $(easyTree).delegate("li span:not('.glyphicon')", 'mouseenter mouseleave', function (e) {
+                        var cur_ele_pos = $(this).offset();
+                        var left = cur_ele_pos.left;
+                        var top = cur_ele_pos.top;
+                        var width = $(this).width();
+                        var height = $(this).height();
 
-                    var desc=$(this).parent('li').attr('desc');
-                    if(!desc || desc.length<=0){
-                        desc="暂无描述信息";
+                        $(this).next(".right_tips").css({
+                            "position": "absolute",
+                            "display": "block",
+                            "left": width + 30 + "px",
+                            "top": "10px",
+                        }).find('.tips_desc').text(desc).on("mouseenter",function (e) {
+                            $(this).css({
+                                "height":"auto",
+                                "position":"relative",
+                                "z-index":"100"
+                            });
+                        }).on("mouseleave",function (e) {
+                            $(this).css({
+                                "height":"32px",
+                                "z-index":"1"
+                            });
+                        });
                     }
+                });
 
-                    var cur_ele_pos=$(this).offset();
-                    var left=cur_ele_pos.left;
-                    var top=cur_ele_pos.top;
-                    var width=$(this).width();
-                    var height=$(this).height();
-
-                    $('.popover').css({
-                        "position":"absolute",
-                        "display":"block",
-                        "left":left+width+16+"px",
-                        "top":top-10+"px",
-                    }).find('.popover-content').text(desc);
-
-                    if(e.type=="mouseleave"){
-                         $('.popover').hide();
-                    }
-
-             });
             }
             // collapse or expand
             $(easyTree).delegate('li.parent_li > span', 'click', function (e) {

@@ -117,8 +117,8 @@
             <h3>国际公司调研
                 <span class="span_font_14">
                      <select id="sel_project">
-                         <option value="-1" selected="selected">请选择</option>
-                         <option  value="1">修改名称</option>
+                         <option value="" selected="selected">请选择</option>
+                         <option  value="1"><span>修改名称</span></option>
                          <option  value="2">项目完结</option>
                          <option  value="3">删除项目</option>
                      </select>
@@ -146,18 +146,13 @@
                         </form>
                     </div>
                     <ul>
-                        <li><span>小东方</span><span> caipf@wangsu.com</span></li>
-                        <li><span>大白</span><span> 123456789@wangsu.com</span></li>
-                        <li><span>孙悟空</span><span> caipf@wangsu.com</span></li>
-                        <li><span>小东方</span><span> caipf@wangsu.com</span></li>
-                        <li><span>小东方</span><span> caipf@wangsu.com</span></li>
-                        <li><span>小东方</span><span> caipf@wangsu.com</span></li>
-                        <li><span>小东方</span><span> caipf@wangsu.com</span></li>
-                        <li><span>大白</span><span> 123456789@wangsu.com</span></li>
-                        <li><span>孙悟空</span><span> caipf@wangsu.com</span></li>
-                        <li><span>小东方</span><span> caipf@wangsu.com</span></li>
-                        <li><span>小东方</span><span> caipf@wangsu.com</span></li>
-                        <li><span>小东方</span><span> caipf@wangsu.com</span></li>
+                        <li><span>小东方</span><span> caipf@wangsu.com</span><span class="glyphicon glyphicon-remove btn-red-font pointer span_pl_3p"></span></li>
+                        <li><span>大白</span><span> 123456789@wangsu.com</span><span class="glyphicon glyphicon-remove btn-red-font pointer span_pl_3p"></span></li>
+                        <li><span>孙悟空</span><span> caipf@wangsu.com</span><span class="glyphicon glyphicon-remove btn-red-font pointer span_pl_3p"></span></li>
+                        <li><span>小东方</span><span> caipf@wangsu.com</span><span class="glyphicon glyphicon-remove btn-red-font pointer span_pl_3p"></span></li>
+                        <li><span>小东方</span><span> caipf@wangsu.com</span><span class="glyphicon glyphicon-remove btn-red-font pointer span_pl_3p"></span></li>
+                        <li><span>小东方</span><span> caipf@wangsu.com</span><span class="glyphicon glyphicon-remove btn-red-font pointer span_pl_3p"></span></li>
+
                     </ul>
                 </div>
             </div>
@@ -478,6 +473,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
+
                     <span class="error-info">您输入的信息有误！</span>
                     <button type="button" class="btn btn-primary">提交修改</button>
                 </div>
@@ -497,6 +493,8 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 
 <script>
 
@@ -522,7 +520,10 @@
              if(this.value==="1"){
                  $('#updateProjectName').modal("show");
              }
+             this.options[0].selected=true;
         });
+
+
         [].forEach.call(container.getElementsByClassName('project_list'), function (el) {
             new Sortable(el, {group: 'photo'});
         });
