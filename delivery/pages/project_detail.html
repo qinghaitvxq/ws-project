@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../style/sortable.css">
 
 
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -162,9 +163,8 @@
 
     </div>
     <div class="row main-content">
-
-
-        <div id="container">
+        <div class="task-main-content">
+           <div id="container">
             <div class="task_container">
                 <p class="task_title">公司总体情况介绍</p>
                 <span class="btn_add_task" data-toggle="modal" data-target="#createTask"
@@ -207,28 +207,28 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
-                        <div class="task_detail">
-                            <ul>
-                                <li>任务负责人：aaa<span class="arrow_icon">展开</span></li>
-                                <li>任务完成时间：2017年4月17日</li>
-                                <li>
-                                    任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="task_detail">
-                            <ul>
-                                <li>任务负责人：aaa<span class="arrow_icon">展开</span></li>
-                                <li>任务完成时间：2017年4月17日</li>
-                                <li>
-                                    任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    <!--<li>-->
+                        <!--<div class="task_detail">-->
+                            <!--<ul>-->
+                                <!--<li>任务负责人：aaa<span class="arrow_icon">展开</span></li>-->
+                                <!--<li>任务完成时间：2017年4月17日</li>-->
+                                <!--<li>-->
+                                    <!--任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="task_detail">-->
+                            <!--<ul>-->
+                                <!--<li>任务负责人：aaa<span class="arrow_icon">展开</span></li>-->
+                                <!--<li>任务完成时间：2017年4月17日</li>-->
+                                <!--<li>-->
+                                    <!--任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</li>-->
                 </ul>
 
 
@@ -312,14 +312,41 @@
 
 
             </div>
+            <div class="task_container">
+                <p class="task_title">归档test</p>
 
+                <ul class="project_list">
+                    <li>
+                        <div class="task_detail">
+                            <ul>
+                                <li>任务负责人：22 <span class="arrow_icon">展开</span></li>
+                                <li>任务完成时间：2017年4月18日</li>
+                                <li>任务内容：haha</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task_detail">
+                            <ul>
+                                <li>任务负责人：33 <span class="arrow_icon">展开</span></li>
+                                <li>任务完成时间：2017年4月17日</li>
+                                <li>
+                                    任务内容：Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式Less是一种动态的样式语言。Less扩展了CSS的动态行为，比如说，设置变量（Variables）、混合书写模式
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
         </div>
     </div>
 
-    <div class=" row flow-repo-footer">
+    <!--<div class=" row flow-repo-footer">-->
 
-        <span>如需帮助，请拨打110....</span>
-    </div>
+        <!--<span>如需帮助，请拨打110....</span>-->
+    <!--</div>-->
 
     <!--创建新任务弹出框-->
     <div class="modal fade" id="createTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -372,86 +399,132 @@
             </div>
         </div>
     </div>
-    <div class="task_detail_popwin">
-        <div class="task_segment">
-            <div class="form-group">
 
-                <ul class="task_update_records">
-                    <li><span class="task_title">项目：国际公司调研</span>
-                        <span class="glyphicon glyphicon-remove task_detail_popwin_close"></span></li>
-                </ul>
-            </div>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <table class="create_task_table  task_detail_table">
-                        <thead>
-                        <th>执行人</th>
-                        <th>开始时间</th>
-                        <th>截止时间</th>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <select class="form-control col-sm-4">
-                                    <option>hello</option>
-                                </select>
-                            </td>
-                            <td><input type="text" class="form-control datepicker" value="2017/12/27"></td>
-                            <td><input type="text" class="form-control datepicker"></td>
-                            </td></tr>
-                        </tbody>
-                    </table>
+   <!--任务详情弹出框-->
+    <!-- Modal -->
+    <div class="modal fade" id="mytaskdetailmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--<div class="task_detail_popwin">-->
+                <div class="modal-body">
+
+
+                    <div class="task_segment">
+                        <div class="form-group">
+
+                            <ul class="task_update_records">
+                                <li><span class="task_title">项目：国际公司调研</span>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></button>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <table class="create_task_table  task_detail_table">
+                                    <thead>
+                                    <th>执行人</th>
+                                    <th>开始时间</th>
+                                    <th>截止时间</th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <select class="form-control col-sm-3">
+                                                <option>hello</option>
+                                            </select>
+                                        </td>
+                                        <!--<td><input type="text" class="form-control datepicker" value="2017/12/27"></td>-->
+                                        <!--<td><input type="text" class="form-control datepicker"></td>-->
+                                        <td>
+                                            <div class='input-group date' id='startdatetime'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                       <span class="glyphicon glyphicon-calendar"></span>
+                                   </span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class='input-group date' id='enddatetime'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                       <span class="glyphicon glyphicon-calendar"></span>
+                                   </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+
+                    <div class="task_segment">
+                        <div class="form-group">
+                            <label>流程说明</label>
+                            <textarea class="form-control" rows="3">sdfsdf</textarea>
+                        </div>
+                    </div>
+                    <div class="task_segment">
+                        <div class="form-group">
+                            <label>任务记录</label>
+                            <ul class="task_update_records" id="update_records">
+                                <li><span>小东方提交报告</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方创建了任务</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方状态更新至"客户介绍"</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方状态更新至"技术介绍"</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方提交报告</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方创建了任务</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方状态更新至"客户介绍"</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方状态更新至"技术介绍"</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方创建了任务</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方状态更新至"客户介绍"</span><span>2017-12-27 12:00:00</span></li>
+                                <li><span>小东方状态更新至"技术介绍"</span><span>2017-12-27 12:00:00</span></li>
+                            </ul>
+                            <div class="show_all_records">
+                                <span>展开</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="task_segment">
+                        <div class="form-group">
+                            <label>任务成果</label>
+
+                            <ul class="task_update_records">
+                                <li><span>国际竞品公司调研报告</span><span>2017-12-27</span><span>小东方</span><span> <a
+                                        href="#">查看</a></span></li>
+                                <li><span>国际竞品公司调研报告</span><span>19.8KB</span><span> <a href="#">查看</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--<div class="task_segment">-->
+                        <!--<div class="task_btn_group">-->
+                            <!--<button type="button" class="btn btn-primary">取消任务</button>-->
+                            <!--<button type="button" class="btn btn-primary">修改报告</button>-->
+                            <!--<button type="button" class="btn btn-primary">提交报告</button>-->
+                            <!--<button type="button" class="btn btn-primary">完成任务</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
                 </div>
-            </form>
-        </div>
-        <div class="task_segment">
-            <div class="form-group">
-                <label>流程说明</label>
-                <textarea class="form-control" rows="3">sdfsdf</textarea>
-            </div>
-        </div>
-        <div class="task_segment">
-            <div class="form-group">
-                <label>任务记录</label>
-                <ul class="task_update_records" id="update_records">
-                    <li><span>小东方提交报告</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方创建了任务</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方状态更新至"客户介绍"</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方状态更新至"技术介绍"</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方提交报告</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方创建了任务</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方状态更新至"客户介绍"</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方状态更新至"技术介绍"</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方创建了任务</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方状态更新至"客户介绍"</span><span>2017-12-27 12:00:00</span></li>
-                    <li><span>小东方状态更新至"技术介绍"</span><span>2017-12-27 12:00:00</span></li>
-                </ul>
-                <div class="show_all_records">
-                    <span>展开</span>
+                <!--</div>-->
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                    <button type="button" class="btn btn-primary">取消任务</button>
+                    <button type="button" class="btn btn-primary">修改报告</button>
+                    <button type="button" class="btn btn-primary">提交报告</button>
+                    <button type="button" class="btn btn-primary">完成任务</button>
                 </div>
-
-            </div>
-        </div>
-        <div class="task_segment">
-            <div class="form-group">
-                <label>任务成果</label>
-
-                <ul class="task_update_records">
-                    <li><span>国际竞品公司调研报告</span><span>2017-12-27</span><span>小东方</span><span> <a
-                            href="#">查看</a></span></li>
-                    <li><span>国际竞品公司调研报告</span><span>19.8KB</span><span> <a href="#">查看</a></span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="task_segment">
-            <div class="task_btn_group">
-                <button type="button" class="btn btn-primary">取消任务</button>
-                <button type="button" class="btn btn-primary">修改报告</button>
-                <button type="button" class="btn btn-primary">提交报告</button>
-                <button type="button" class="btn btn-primary">完成任务</button>
             </div>
         </div>
     </div>
+
 
     <!--修改项目名称弹出框-->
     <div class="modal fade" id="updateProjectName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -473,7 +546,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-
                     <span class="error-info">您输入的信息有误！</span>
                     <button type="button" class="btn btn-primary">提交修改</button>
                 </div>
@@ -491,14 +563,19 @@
 <script src="../scripts/Sortable.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
+
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+<link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+<script src="../scripts/bootstrap.js"></script>
 <script>
 
     function pageLoad() {
+
+
         var li_num = $("#update_records").children("li").length;
 
         if (li_num > 6) {
@@ -511,9 +588,24 @@
             $(".show_all_records").hide();
         }
     }
-
+    function calcontainerwidth(){
+        //动态计算container的宽度
+        var container=$("#container");
+        var child_div_length=container.children("div").length;
+        if(child_div_length>0){
+            var f_width=child_div_length*370;
+            if(container.width()<f_width){
+                container.css({
+                    "width":f_width+20+"px"
+                });
+            }
+        }
+    }
     $(document).ready(function () {
         pageLoad();
+        calcontainerwidth();
+        $('#startdatetime,#enddatetime').datetimepicker();
+
         //项目名称下拉框
         $('#sel_project').change(function() {
             jQuery.noConflict();
@@ -578,14 +670,19 @@
 
         });
         $(".datepicker").datepicker();
+
         $(".project_list>li").click(function (e) {
            if(e.target.nodeName!="SPAN") {
-               var pos = $(this).offset();
-               $(".task_detail_popwin").css({
-                   "display": "block",
-                   "left": pos.left + 350 + "px",
-                   "top": pos.top + "px"
-               });
+
+               $('#mytaskdetailmodal').modal();
+
+//               var pos = $(this).offset();
+//               $(".task_detail_popwin").css({
+//                   "display": "block",
+//                   "left": pos.left + 350 + "px",
+//                   "top": pos.top + "px"
+//               });
+
            }
         });
         $(".task_detail_popwin_close").click(function () {

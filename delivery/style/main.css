@@ -910,8 +910,8 @@ a:link{
    padding: 8px;
 }
 .task_detail_popwin{
-   position:absolute;
-    display:none;
+   /*position:absolute;*/
+    /*display:none;*/
     width:45%;
     padding:10px;
     box-shadow: 0 3px 12px rgba(27, 31, 35, 0.59);
@@ -922,7 +922,7 @@ a:link{
 .task_segment{
     border-bottom: solid 1px #c7c7c7;
     padding: 15px 8px 0 8px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .show_all_records{
     text-align: center;
@@ -969,11 +969,11 @@ a:link{
     padding:5px 0px 15px 0px;
 }
 .task_detail_table{
-    width: 90%;
+    width: 95%;
     margin-left: 5px;
 }
 .task_detail_table td{
-    width:30%;
+    /*width:35%;*/
     text-align: left;
 
 }

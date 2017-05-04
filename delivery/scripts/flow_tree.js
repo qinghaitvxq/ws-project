@@ -31,7 +31,7 @@
         },
         applyClasses: function (ctrl_id,settings) {
 
-            if(!settings.readonly) {
+             if(!settings.readonly) {
                 var icon_plus = "<span class='" + CLASSES.glyphicon + " " + CLASSES.glyphicon_plus + "'></span>";
                 var pid = this.parent().parent().parent().parent().parent().attr("id");
                 if (pid == ctrl_id) {
@@ -41,8 +41,10 @@
                     icon_plus +
                     "<span class='" + CLASSES.glyphicon + " " + CLASSES.glyphicon_trash + " " + CLASSES.btn_red_font + "'/></span>" +
                     "</div>";
+                console.log('check this herer');
+                console.log(this);
                 this.children('div').before(editarea);
-            }
+             }
         },
 
         createnode: function () {
@@ -61,10 +63,7 @@
             var ctrl_id = _this.attr("id");
 
             this.addClass("flowtree");
-            var flownodes = this.prepareFlowNodes();
-            flownodes.each(function () {
-                $(this).applyClasses(_this.attr("id"),settings);
-            });
+
             if (!settings.readonly) {
 
                 var flownodes = this.prepareFlowNodes();
@@ -72,7 +71,6 @@
                 flownodes.each(function () {
                     $(this).applyClasses(_this.attr("id"),settings);
                 });
-
                 var addnode = "<div class='" + CLASSES.add_fnode + "'>" +
                     "<span class='" + CLASSES.glyphicon + " " + CLASSES.glyphicon_plus + "'></span>" +
                     "<span class='" + CLASSES.btn_topnode_add + "'>添加一级节点</span>" +
@@ -88,6 +86,18 @@
             //新增时默认显示一个节点框
             if (_this.children("li").length == 0) {
                 createFirstNode();
+            }
+            //判断禁用标题和内容
+            if(settings.input_r){
+                _this.find("input").attr("disabled","disabled").css({
+                    "background-color":"#eee"
+                });
+
+            }
+            if(settings.textarea_r){
+                _this.find("textarea").attr("disabled","disabled").css({
+                    "background-color":"#eee"
+                });
             }
             this.parent().on("click", "span", function (e) {
                 var thisobj = $(e.currentTarget);
